@@ -15,20 +15,3 @@ export enum Rarity {
   Uncommon,
   Rare,
 }
-
-/*
-
-isAvailableAt(hour: number, month: number): boolean {
-    return this.isInTimeRanges(hour, this.hourRanges) && this.isInTimeRanges(month, this.monthRanges);
-  }
-
-  private isInTimeRanges(time: number, ranges: number[][]): boolean {
-    for (let [start, end] of ranges) {
-      if (time >= start && time < end) {
-        return true;
-      }
-    }
-
-    return false;
-  }
-  */
