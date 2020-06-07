@@ -1,6 +1,15 @@
 import { Fish, Rarity, FishLocation, FishShadow } from '../interfaces';
 
-export const ALL_FISH: Fish[] = [
+export const FishLocationDisplay: Map<FishLocation, string> = new Map([
+  [ FishLocation.CliffTop, 'Cliff Top' ],
+  [ FishLocation.Pier, 'Pier' ],
+  [ FishLocation.Pond, 'Pond' ],
+  [ FishLocation.River, 'River' ],
+  [ FishLocation.RiverMouth, 'River Mouth' ],
+  [ FishLocation.Sea, 'Sea' ],
+]);
+
+export const AllFish: Fish[] = [
   {
     "hourRanges": [
       [0, 23]

@@ -7,20 +7,20 @@ export interface Fish extends Critter {
 }
 
 export enum FishLocation {
-  CliffTop,
-  Pier,
-  Pond,
-  River,
-  RiverMouth,
-  Sea,
+  CliffTop = 'cliff-top',
+  Pier = 'pier',
+  Pond = 'pond',
+  River = 'river',
+  RiverMouth = 'river-mouth',
+  Sea = 'sea',
 }
 
 export enum FishShadow {
-  VerySmall,
-  Small,
-  Medium,
-  Large,
-  Huge,
-  LongAndThin,
-  Finned,
+  VerySmall = 'very-small',
+  Small = 'small',
+  Medium = 'medium',
+  Large = 'large',
+  Huge = 'huge',
+  LongAndThin = 'long-thin',
+  Finned = 'finned',
 }

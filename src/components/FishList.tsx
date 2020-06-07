@@ -1,0 +1,31 @@
+import React from 'react';
+import { Fish } from '../shared/interfaces';
+
+interface FishListProps {
+  items: Fish[];
+  shouldDisplayItem?: (fish: Fish) => boolean;
+}
+
+export class FishListComponent extends React.Component<FishListProps> {
+  readonly MAX_ROWS = 5;
+
+  render() {
+    return (
+      <div className="fish-view">
+        {this.props.items.map(fish => {
+          return this.renderFish(fish);
+        })}
+      </div>
+    );
+  }
+
+  renderFish(fish: Fish) {
+    const show = this.props.shouldDisplayItem ? this.props.shouldDisplayItem(fish) : true;
+    return (
+      <div className="fish" hidden={!show}>
+        Id: {fish.id}
+        Name: {fish.name}
+      </div>
+    );
+  }
+}

@@ -10,8 +10,15 @@ export interface Critter {
 }
 
 export enum Rarity {
-  VeryCommon,
-  Common,
-  Uncommon,
-  Rare,
+  VeryCommon = 'very-common',
+  Common = 'common',
+  Uncommon = 'uncommon',
+  Rare = 'rare',
 }
+
+export const RarityDisplay: Map<Rarity, string> = new Map([
+  [ Rarity.VeryCommon, 'Very Common' ],
+  [ Rarity.Common, 'Common' ],
+  [ Rarity.Uncommon, 'Uncommon' ],
+  [ Rarity.Rare, 'Rare' ],
+]);
