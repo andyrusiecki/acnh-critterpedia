@@ -23,8 +23,8 @@ export class FishListComponent extends React.Component<FishListProps> {
     const show = this.props.shouldDisplayItem ? this.props.shouldDisplayItem(fish) : true;
     return (
       <div className="fish" hidden={!show}>
-        Id: {fish.id}
-        Name: {fish.name}
+        <span>{fish.name}</span>
+        <img src={`/images/thumb/fish/${fish.id}.png`} alt={fish.name} />
       </div>
     );
   }

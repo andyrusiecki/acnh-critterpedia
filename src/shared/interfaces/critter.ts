@@ -1,8 +1,6 @@
 export interface Critter {
   id: number;
   name: string;
-  thumbnailImageURL: string;
-  fullImageURL: string;
   rarity: Rarity;
   monthRanges: number[][];
   hourRanges: number[][];
