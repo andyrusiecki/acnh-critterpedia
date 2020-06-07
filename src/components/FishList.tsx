@@ -1,5 +1,6 @@
 import React from 'react';
 import { Fish } from '../shared/interfaces';
+import { getFullURL } from '../shared';
 
 interface FishListProps {
   items: Fish[];
@@ -24,7 +25,7 @@ export class FishListComponent extends React.Component<FishListProps> {
     return (
       <div className="fish" hidden={!show}>
         <span>{fish.name}</span>
-        <img src={`/images/thumb/fish/${fish.id}.png`} alt={fish.name} />
+        <img src={getFullURL(`/images/thumb/fish/${fish.id}.png`)} alt={fish.name} />
       </div>
     );
   }
