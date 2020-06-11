@@ -2,6 +2,8 @@ import React from 'react';
 import { Fish } from '../shared/interfaces';
 import { getFullURL } from '../shared';
 
+import './FishList.css';
+
 interface FishListProps {
   items: Fish[];
   shouldDisplayItem?: (fish: Fish) => boolean;
@@ -12,7 +14,7 @@ export class FishListComponent extends React.Component<FishListProps> {
 
   render() {
     return (
-      <div className="fish-view">
+      <div className="fish-list">
         {this.props.items.map(fish => {
           return this.renderFish(fish);
         })}
@@ -23,8 +25,7 @@ export class FishListComponent extends React.Component<FishListProps> {
   renderFish(fish: Fish) {
     const show = this.props.shouldDisplayItem ? this.props.shouldDisplayItem(fish) : true;
     return (
-      <div className="fish" hidden={!show}>
-        <span>{fish.name}</span>
+      <div className={`fish ${show ? '' : 'inactive'}`}>
         <img src={getFullURL(`/images/thumb/fish/${fish.id}.png`)} alt={fish.name} />
       </div>
     );

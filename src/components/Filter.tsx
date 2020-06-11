@@ -1,6 +1,8 @@
 import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 
+import './Filter.css';
+
 export interface Filter {
   name: string;
   displayName: string;

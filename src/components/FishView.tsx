@@ -139,10 +139,10 @@ export class FishViewComponent extends React.Component<{}, FishViewState> {
     };
 
     return (
-      <div>
+      <section className="fish-view">
         <FilterComponent filters={this.filters} onUpdate={this.filterUpdate.bind(this)}/>
         <FishListComponent items={AllFish} shouldDisplayItem={shouldShow} />
-      </div>
+      </section>
     );
   }
 

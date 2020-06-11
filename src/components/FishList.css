@@ -1,0 +1,25 @@
+.fish-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  height: 600px;
+}
+
+.fish {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: bisque;
+}
+
+.fish img {
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+}
+
+.fish.inactive {
+  opacity: 0.3;
+}

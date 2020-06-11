@@ -1,13 +1,4 @@
 .fish-view {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  height: 800px;
-}
-.fish {
-  height: 150px;
-  width: 150px;
-  margin: 5px;
-  background-color: bisque;
+  background-image: url("/acnh-critterpedia/images/pattern-waves.jpg");
+  background-repeat: repeat;
 }

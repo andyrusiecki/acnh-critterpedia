@@ -1,3 +1,4 @@
-main {
-  max-width: 80%;
+main.section-fish {
+  background-image: url("/acnh-critterpedia/images/pattern-waves.jpg");
+  background-repeat: repeat;
 }
