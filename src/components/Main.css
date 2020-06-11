@@ -1,4 +1,20 @@
-main.section-fish {
+main, section {
+  height: 100%;
+  width: 100;
+  padding: 0px;
+  margin: 0px;
+}
+
+.section-home {
+  background-image: url("/acnh-critterpedia/images/pattern-leaves-white.jpg");
+  background-repeat: repeat;
+}
+
+.section-fish {
   background-image: url("/acnh-critterpedia/images/pattern-waves.jpg");
   background-repeat: repeat;
+}
+
+div.container {
+
 }

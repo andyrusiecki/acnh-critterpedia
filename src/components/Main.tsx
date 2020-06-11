@@ -9,8 +9,20 @@ export function Main() {
   return (
     <main>
       <Switch>
-        <Route exact path="/fish" component={FishViewComponent} />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/fish">
+          <section className="section-fish">
+            <div className="container">
+              <FishViewComponent />
+            </div>
+          </section>
+        </Route>
+        <Route exact path="/">
+          <section className="section-home">
+            <div className="container">
+              <Home />
+            </div>
+          </section>
+        </Route>
       </Switch>
     </main>
   );
