@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/acnh-critterpedia/static/css/main.a86ea155.chunk.css",
-    "main.js": "/acnh-critterpedia/static/js/main.d5a3f7af.chunk.js",
-    "main.js.map": "/acnh-critterpedia/static/js/main.d5a3f7af.chunk.js.map",
+    "main.js": "/acnh-critterpedia/static/js/main.628e181c.chunk.js",
+    "main.js.map": "/acnh-critterpedia/static/js/main.628e181c.chunk.js.map",
     "runtime-main.js": "/acnh-critterpedia/static/js/runtime-main.f27a5936.js",
     "runtime-main.js.map": "/acnh-critterpedia/static/js/runtime-main.f27a5936.js.map",
     "static/css/2.af3c1da9.chunk.css": "/acnh-critterpedia/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.91db38e1.chunk.js": "/acnh-critterpedia/static/js/2.91db38e1.chunk.js",
-    "static/js/2.91db38e1.chunk.js.map": "/acnh-critterpedia/static/js/2.91db38e1.chunk.js.map",
+    "static/js/2.fa24eef2.chunk.js": "/acnh-critterpedia/static/js/2.fa24eef2.chunk.js",
+    "static/js/2.fa24eef2.chunk.js.map": "/acnh-critterpedia/static/js/2.fa24eef2.chunk.js.map",
     "index.html": "/acnh-critterpedia/index.html",
-    "precache-manifest.46e9b66c611ac7b09cd926e2f761ce7a.js": "/acnh-critterpedia/precache-manifest.46e9b66c611ac7b09cd926e2f761ce7a.js",
+    "precache-manifest.8033cf3b502d7a19c6e0e177b2ab137a.js": "/acnh-critterpedia/precache-manifest.8033cf3b502d7a19c6e0e177b2ab137a.js",
     "service-worker.js": "/acnh-critterpedia/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/acnh-critterpedia/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.a86ea155.chunk.css.map": "/acnh-critterpedia/static/css/main.a86ea155.chunk.css.map",
-    "static/js/2.91db38e1.chunk.js.LICENSE.txt": "/acnh-critterpedia/static/js/2.91db38e1.chunk.js.LICENSE.txt"
+    "static/js/2.fa24eef2.chunk.js.LICENSE.txt": "/acnh-critterpedia/static/js/2.fa24eef2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f27a5936.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.91db38e1.chunk.js",
+    "static/js/2.fa24eef2.chunk.js",
     "static/css/main.a86ea155.chunk.css",
-    "static/js/main.d5a3f7af.chunk.js"
+    "static/js/main.628e181c.chunk.js"
   ]
 }
