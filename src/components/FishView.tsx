@@ -1,7 +1,7 @@
 import React from 'react';
 import { FilterComponent, Filter, FilterOption, FilterValidation } from './Filter';
 import { FishListComponent } from './FishList';
-import { AllFish, FishLocationDisplay } from '../shared/constants';
+import { FishLocationDisplay } from '../shared/constants';
 import { Fish, FishLocation, Rarity, RarityDisplay } from '../shared/interfaces';
 
 import './FishView.css';
@@ -27,6 +27,7 @@ export class FishViewComponent extends React.Component<{}, FishViewState> {
       this.getTimeFilter(),
       this.getRarityFilter(),
       this.getLocationFilter(),
+      this.getDonatedFilter(),
     ];
   }
 
@@ -130,6 +131,32 @@ export class FishViewComponent extends React.Component<{}, FishViewState> {
     };
   }
 
+  private getDonatedFilter(): Filter {
+    return {
+      name: 'donated',
+      displayName: 'Donation Status',
+      allowMultiple: false,
+      options: [
+        {
+          displayName: 'Donated',
+          value: true,
+        },
+        {
+          displayName: 'Not Donated',
+          value: false,
+        }
+      ],
+      defaults: [],
+      validationGenerator: (donated: boolean[]) => {
+        return (fish: Fish) => {
+          if (donated.length === 0) return true;
+
+          return fish.donated === donated[0];
+        };
+      },
+    };
+  }
+
   render() {
     const shouldShow = (fish: Fish) => {
       return this.state.currentFilterValidations.reduce(
@@ -141,7 +168,7 @@ export class FishViewComponent extends React.Component<{}, FishViewState> {
     return (
       <div>
         <FilterComponent filters={this.filters} onUpdate={this.filterUpdate.bind(this)}/>
-        <FishListComponent items={AllFish} shouldDisplayItem={shouldShow} />
+        <FishListComponent shouldDisplayItem={shouldShow} />
       </div>
     );
   }

@@ -5,6 +5,7 @@ export interface Critter {
   monthRanges: number[][];
   hourRanges: number[][];
   sellPrice: number;
+  donated: boolean;
 }
 
 export enum Rarity {

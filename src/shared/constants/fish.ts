@@ -24,7 +24,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [1, 3],
       [11, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -39,7 +40,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -54,7 +56,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -70,7 +73,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -85,7 +89,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -101,7 +106,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -116,7 +122,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -131,7 +138,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -146,7 +154,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -161,7 +170,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [4, 8]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -176,7 +186,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [4, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -192,7 +203,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [8, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -208,7 +220,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [4, 10]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -223,7 +236,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [3, 7]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -238,7 +252,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [5, 8]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -254,7 +269,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -269,7 +285,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [3, 5]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -285,7 +302,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [5, 10]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -300,7 +318,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 8]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -315,7 +334,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -331,7 +351,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [1, 3],
       [10, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -346,7 +367,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -361,7 +383,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 10]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -376,7 +399,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [9, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -392,7 +416,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [1, 2],
       [12, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -407,7 +432,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [7, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -424,7 +450,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [3, 6],
       [9, 11]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -441,7 +468,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [3, 6],
       [9, 11]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -458,7 +486,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [3, 5],
       [9, 11]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -475,7 +504,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [1, 3],
       [12, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -490,7 +520,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [9, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -505,7 +536,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [9, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -521,7 +553,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [9, 11]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -536,7 +569,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [4, 11]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -551,7 +585,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [5, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -567,7 +602,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [5, 10]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -582,7 +618,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [5, 10]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -597,7 +634,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [4, 11]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -612,7 +650,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [5, 10]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -629,7 +668,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -645,7 +685,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -660,7 +701,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -676,7 +718,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -692,7 +735,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -708,7 +752,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -724,7 +769,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [1, 3],
       [9, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -740,7 +786,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [1, 3],
       [12, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -755,7 +802,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [4, 11]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -770,7 +818,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [4, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -785,7 +834,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [4, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -800,7 +850,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [4, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -815,7 +866,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [7, 8]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -830,7 +882,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [4, 11]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -847,7 +900,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [1, 2],
       [11, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -862,7 +916,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [7, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -877,7 +932,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -892,7 +948,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -907,7 +964,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [3, 11]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -922,7 +980,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -937,7 +996,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -953,7 +1013,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [1, 4],
       [10, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -968,7 +1029,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -984,7 +1046,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [1, 8],
       [12, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -999,7 +1062,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [8, 10]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1014,7 +1078,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 10]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1030,7 +1095,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [1, 4],
       [11, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1047,7 +1113,8 @@ export const AllFish: Fish[] = [
       [1, 4],
       [7, 9],
       [11, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1062,7 +1129,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [5, 10]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1077,7 +1145,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [5, 10]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1092,7 +1161,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [7, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1107,7 +1177,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [8, 11]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1123,7 +1194,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1139,7 +1211,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1155,7 +1228,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1170,7 +1244,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1185,7 +1260,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [6, 9]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1202,7 +1278,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [1, 3],
       [11, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1218,7 +1295,8 @@ export const AllFish: Fish[] = [
     "monthRanges": [
       [1, 5],
       [12, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1234,7 +1312,8 @@ export const AllFish: Fish[] = [
     "mustBeRaining": false,
     "monthRanges": [
       [1, 12]
-    ]
+     ],
+    "donated": false
   },
   {
     "hourRanges": [
@@ -1249,6 +1328,7 @@ export const AllFish: Fish[] = [
     "mustBeRaining": true,
     "monthRanges": [
       [1, 12]
-    ]
+    ],
+    "donated": false
   }
 ];
