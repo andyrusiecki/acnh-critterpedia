@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
+import middleware from './middleware';
 
 import './index.scss';
 import App from './components/app';
@@ -12,7 +13,11 @@ import { getStateFromStorage, saveStateToStorage, InitialRootState } from './sha
 const restoredState = getStateFromStorage();
 
 // Create store
-const store = createStore(rootReducer, restoredState || InitialRootState );
+const store = createStore(
+  rootReducer,
+  restoredState || InitialRootState,
+  middleware,
+);
 
 // Save state to storage on state change
 store.subscribe(() => {
