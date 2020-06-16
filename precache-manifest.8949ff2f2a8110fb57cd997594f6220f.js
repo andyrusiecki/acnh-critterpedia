@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ca9665201083f0fdd4a18761bc43e82a",
+    "revision": "78241bd71f58f59ffcf05e4a5f914c32",
     "url": "/acnh-critterpedia/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/acnh-critterpedia/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "b1dbbdfb9a1eb0fff790",
+    "revision": "714bb623ca9051e023ac",
     "url": "/acnh-critterpedia/static/css/main.adfb4b2c.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/acnh-critterpedia/static/js/2.d532f8e1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b1dbbdfb9a1eb0fff790",
-    "url": "/acnh-critterpedia/static/js/main.604c984c.chunk.js"
+    "revision": "714bb623ca9051e023ac",
+    "url": "/acnh-critterpedia/static/js/main.4ea17070.chunk.js"
   },
   {
     "revision": "cd86599aeccadfb2a2c2",
