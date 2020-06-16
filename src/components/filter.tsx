@@ -28,48 +28,27 @@ export class Filter extends React.Component<FilterProps, FilterState> {
     };
   }
 
-
-  private didValuesChange(prevValues: {[name: string]: any[]}, newValues: {[name: string]: any[]}): boolean {
-    for (let filterName in newValues) {
-      const prev = prevValues[filterName];
-      const curr = newValues[filterName];
-
-      if (prev.length !== curr.length) {
-        return true;
-      }
-
-      for (let i = 0; i < prev.length; i++) {
-        if (prev[i] !== curr[i]) {
-          return true;
-        }
-      }
-    }
-
-    return false;
-  }
-
   onSelect(eventKey: string) {
     const i = parseInt(eventKey);
 
-    const newValue = this.props.options[i].value;
+    const newOption = this.props.options[i];
 
-    if (newValue !== this.state.currentOption.value) {
+    if (newOption.value !== this.state.currentOption.value) {
       if (this.props.onUpdate) {
-        this.props.onUpdate(newValue);
+        this.props.onUpdate(newOption.value);
       }
 
       this.setState({
-        currentOption: newValue,
+        currentOption: newOption,
       });
     }
   }
-
 
   render() {
     return (
       <Dropdown id={'filter-' + this.props.name} onSelect={this.onSelect.bind(this)}>
         <Dropdown.Toggle id={'dropdown-' + this.props.name}>
-          {this.props.displayName}
+          {this.props.displayName}: {this.state.currentOption.displayName}
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
