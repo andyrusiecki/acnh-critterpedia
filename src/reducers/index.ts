@@ -1,9 +1,6 @@
 import { combineReducers } from 'redux';
-import { donate, timeFilter, fishLocationFilter, donateFilter } from './collection';
+import { fish } from './fish';
 
 export default combineReducers({
-  donate,
-  timeFilter,
-  fishLocationFilter,
-  donateFilter,
+  fish,
 })

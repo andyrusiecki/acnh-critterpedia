@@ -1,3 +1,3 @@
 export * from './critter';
 export * from './fish';
-export * from './storage';
+export * from './state';

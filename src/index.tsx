@@ -5,9 +5,19 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 
 import './index.css';
-import App from './App';
+import App from './components/App';
+import { getStateFromStorage, saveStateToStorage, InitialRootState } from './shared';
 
-const store = createStore(rootReducer);
+// Restore state from storage
+const restoredState = getStateFromStorage();
+
+// Create store
+const store = createStore(rootReducer, restoredState || InitialRootState );
+
+// Save state to storage on state change
+store.subscribe(() => {
+  saveStateToStorage(store.getState());
+});
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Home } from './Home';
-import { FishViewComponent } from './FishView';
+import FishContainer from '../containers/fish';
 
 import './Main.css';
 
@@ -12,7 +12,7 @@ export function Main() {
         <Route exact path="/fish">
           <section className="section-fish">
             <div className="container">
-              <FishViewComponent />
+              <FishContainer />
             </div>
           </section>
         </Route>

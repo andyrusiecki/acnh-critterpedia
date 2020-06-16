@@ -17,8 +17,6 @@ export interface SetDonateAction {
   value: boolean;
 }
 
-export type DonateActionTypes = ToggleDonateAction | SetDonateAction;
-
 // Filter Actions
 // => Time Filter
 export const SET_TIME_FILTER = 'SET_TIME_FILTER';
@@ -66,4 +64,9 @@ export enum DonateFilter {
   SHOW_NOT_DONATED = 'SHOW_NOT_DONATED',
 };
 
-export type FilterActionTypes = SetTimeFilterAction | SetFishLocationFilterAction | SetDonateFilterAction;
+export type ActionTypes =
+  ToggleDonateAction |
+  SetDonateAction |
+  SetTimeFilterAction |
+  SetFishLocationFilterAction |
+  SetDonateFilterAction;
