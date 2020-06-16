@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/acnh-critterpedia/static/css/main.adfb4b2c.chunk.css",
-    "main.js": "/acnh-critterpedia/static/js/main.4ea17070.chunk.js",
-    "main.js.map": "/acnh-critterpedia/static/js/main.4ea17070.chunk.js.map",
+    "main.js": "/acnh-critterpedia/static/js/main.2140af5f.chunk.js",
+    "main.js.map": "/acnh-critterpedia/static/js/main.2140af5f.chunk.js.map",
     "runtime-main.js": "/acnh-critterpedia/static/js/runtime-main.f27a5936.js",
     "runtime-main.js.map": "/acnh-critterpedia/static/js/runtime-main.f27a5936.js.map",
     "static/css/2.af3c1da9.chunk.css": "/acnh-critterpedia/static/css/2.af3c1da9.chunk.css",
     "static/js/2.d532f8e1.chunk.js": "/acnh-critterpedia/static/js/2.d532f8e1.chunk.js",
     "static/js/2.d532f8e1.chunk.js.map": "/acnh-critterpedia/static/js/2.d532f8e1.chunk.js.map",
     "index.html": "/acnh-critterpedia/index.html",
-    "precache-manifest.8949ff2f2a8110fb57cd997594f6220f.js": "/acnh-critterpedia/precache-manifest.8949ff2f2a8110fb57cd997594f6220f.js",
+    "precache-manifest.fe063105a0ac32bbb3ef78cdda06c931.js": "/acnh-critterpedia/precache-manifest.fe063105a0ac32bbb3ef78cdda06c931.js",
     "service-worker.js": "/acnh-critterpedia/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/acnh-critterpedia/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.adfb4b2c.chunk.css.map": "/acnh-critterpedia/static/css/main.adfb4b2c.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.d532f8e1.chunk.js",
     "static/css/main.adfb4b2c.chunk.css",
-    "static/js/main.4ea17070.chunk.js"
+    "static/js/main.2140af5f.chunk.js"
   ]
 }
