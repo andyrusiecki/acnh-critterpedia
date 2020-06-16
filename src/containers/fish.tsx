@@ -105,9 +105,9 @@ function mapStateToProps(state: RootState) {
     selectedIDs: getSelectedFishIDs(
       AllFish,
       state.fish.donations,
-      state.fish.filters.time,
-      state.fish.filters.location,
-      state.fish.filters.donate,
+      state.fish.timeFilter,
+      state.fish.locationFilter,
+      state.fish.donateFilter,
     ),
   };
 }

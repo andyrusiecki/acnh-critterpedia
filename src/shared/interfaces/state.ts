@@ -6,9 +6,7 @@ export interface RootState {
 
 export interface FishCollectionState {
   donations: number[];
-  filters: {
-    time: TimeFilter,
-    location: FishLocationFilter,
-    donate: DonateFilter,
-  }
+  timeFilter: TimeFilter,
+  locationFilter: FishLocationFilter,
+  donateFilter: DonateFilter,
 }

@@ -42,9 +42,7 @@ export function fish(state: FishCollectionState = InitialRootState.fish, action:
         {},
         state,
         {
-          filters: {
-            time: action.filter,
-          },
+          timeFilter: action.filter,
         },
       );
     case SET_FISH_LOCATION_FILTER:
@@ -52,9 +50,7 @@ export function fish(state: FishCollectionState = InitialRootState.fish, action:
         {},
         state,
         {
-          filters: {
-            location: action.filter,
-          },
+          locationFilter: action.filter,
         },
       );
     case SET_DONATE_FILTER:
@@ -62,9 +58,7 @@ export function fish(state: FishCollectionState = InitialRootState.fish, action:
         {},
         state,
         {
-          filters: {
-            donate: action.filter,
-          },
+          donateFilter: action.filter,
         },
       );
     default:
