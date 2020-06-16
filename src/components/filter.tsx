@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 
-import './Filter.css';
+import './filter.scss';
 
 export interface FilterOption {
   displayName: string;

@@ -1,0 +1,39 @@
+.critter-item {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background-color: bisque;
+  overflow: hidden;
+
+  &.inactive {
+    opacity: 0.3;
+  }
+
+  img {
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+  }
+
+  .donate-status {
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    height: 50px;
+    width: 50px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    background-color: green;
+    opacity: 0;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &.donated {
+      opacity: 1.0;
+    }
+  }
+}

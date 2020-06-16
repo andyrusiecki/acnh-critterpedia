@@ -1,10 +1,9 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import { setTimeFilter, setFishLocationFilter, setDonateFilter, TimeFilter, FishLocationFilter, DonateFilter, toggleDonate, setDonate } from '../actions';
-import { Fish, FishLocation, AllFish } from '../shared';
-import { Filter, FilterOption } from '../components/Filter';
-import { CritterList } from '../components/CritterList';
-import { CollectionsState } from '../reducers/fish';
+import { Fish, FishLocation, AllFish, RootState } from '../shared';
+import { Filter, FilterOption } from '../components/filter';
+import { CritterList } from '../components/critterList';
 
 interface FishContainerProps {
   selectedIDs: number[];
@@ -100,7 +99,7 @@ function filterFishByDonate(fish: Fish[], donatedIDs: number[], filter: DonateFi
   }
 }
 
-function mapStateToProps(state: CollectionsState) {
+function mapStateToProps(state: RootState) {
   return {
     donatedIDs: state.fish.donations,
     selectedIDs: getSelectedFishIDs(

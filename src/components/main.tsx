@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home } from './Home';
+import { Home } from './home';
 import FishContainer from '../containers/fish';
 
-import './Main.css';
+import './main.scss';
 
 export function Main() {
   return (

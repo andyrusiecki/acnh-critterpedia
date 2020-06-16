@@ -1,28 +1,7 @@
-import { ActionTypes, SET_DONATE, TOGGLE_DONATE, SET_DONATE_FILTER, SET_FISH_LOCATION_FILTER, SET_TIME_FILTER, TimeFilter, FishLocationFilter, DonateFilter } from "../actions";
+import { ActionTypes, SET_DONATE, TOGGLE_DONATE, SET_DONATE_FILTER, SET_FISH_LOCATION_FILTER, SET_TIME_FILTER } from "../actions";
+import { FishCollectionState, InitialRootState } from "../shared";
 
-export interface CollectionsState {
-  fish: FishCollectionState;
-}
-
-export interface FishCollectionState {
-  donations: number[];
-  filters: {
-    time: TimeFilter,
-    location: FishLocationFilter,
-    donate: DonateFilter,
-  }
-}
-
-const initialState: FishCollectionState = {
-  donations: [],
-  filters: {
-    time: TimeFilter.SHOW_ALL,
-    location: FishLocationFilter.SHOW_ALL,
-    donate: DonateFilter.SHOW_ALL,
-  }
-}
-
-export function fish(state: FishCollectionState = initialState, action: ActionTypes): FishCollectionState {
+export function fish(state: FishCollectionState = InitialRootState.fish, action: ActionTypes): FishCollectionState {
   switch (action.type) {
     case TOGGLE_DONATE:
       const index = state.donations.indexOf(action.id);

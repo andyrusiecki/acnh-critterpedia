@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { Header} from './Header';
-import { Main } from './Main';
+import { Header} from './header';
+import { Main } from './main';
 import { getBaseURL } from '../shared';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './app.scss';
 
 
 function App() {

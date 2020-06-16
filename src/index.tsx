@@ -4,8 +4,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 
-import './index.css';
-import App from './components/App';
+import './index.scss';
+import App from './components/app';
 import { getStateFromStorage, saveStateToStorage, InitialRootState } from './shared';
 
 // Restore state from storage
