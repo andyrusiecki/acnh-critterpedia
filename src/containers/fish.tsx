@@ -16,26 +16,22 @@ interface FishContainerProps {
   setDonateFilter: (filter: DonateFilter) => void;
 }
 
-function getSelectedFishIDs(fish: Fish[], donatedIDs: number[], timeFilter: TimeFilter, locationFilter: FishLocationFilter, donateFilter: DonateFilter): number[] {
+function getSelectedFishIDs(fish: Fish[], state: RootState): number[] {
   let filteredFish = fish;
-  filteredFish = filterFishByTime(filteredFish, timeFilter);
-  filteredFish = filterFishByLocation(filteredFish, locationFilter);
-  filteredFish = filterFishByDonate(filteredFish, donatedIDs, donateFilter);
+  filteredFish = filterFishByTime(filteredFish, state.time.hour, state.time.month, state.fish.timeFilter);
+  filteredFish = filterFishByLocation(filteredFish, state.fish.locationFilter);
+  filteredFish = filterFishByDonate(filteredFish, state.fish.donations, state.fish.donateFilter);
 
   return filteredFish.map(fish => fish.id);
 }
 
-function filterFishByTime(fish: Fish[], filter: TimeFilter): Fish[] {
+function filterFishByTime(fish: Fish[], currentHour: number, currentMonth: number, filter: TimeFilter): Fish[] {
   switch (filter) {
     case TimeFilter.SHOW_ALL:
       return fish;
     case TimeFilter.SHOW_CURRENT_TIME:
-      const date = new Date();
-      const hour = date.getHours();
-      const month = date.getMonth() + 1;
-
       return fish.filter((fish: Fish) => {
-        return isAvailableAt(fish, hour, month);
+        return isAvailableAt(fish, currentHour, currentMonth);
       });
     default:
       return fish;
@@ -104,10 +100,7 @@ function mapStateToProps(state: RootState) {
     donatedIDs: state.fish.donations,
     selectedIDs: getSelectedFishIDs(
       AllFish,
-      state.fish.donations,
-      state.fish.timeFilter,
-      state.fish.locationFilter,
-      state.fish.donateFilter,
+      state,
     ),
   };
 }

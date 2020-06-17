@@ -1,7 +1,13 @@
 import { TimeFilter, FishLocationFilter, DonateFilter } from '../../actions';
 
 export interface RootState {
-  fish: FishCollectionState;
+  time: CurrentTimeState,
+  fish: FishCollectionState,
+}
+
+export interface CurrentTimeState {
+  hour: number,
+  month: number,
 }
 
 export interface FishCollectionState {

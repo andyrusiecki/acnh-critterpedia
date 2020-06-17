@@ -8,6 +8,7 @@ import middleware from './middleware';
 import './index.scss';
 import App from './components/app';
 import { getStateFromStorage, saveStateToStorage, InitialRootState } from './shared';
+import { SET_CURRENT_TIME } from './actions';
 
 // Restore state from storage
 const restoredState = getStateFromStorage();
@@ -23,6 +24,22 @@ const store = createStore(
 store.subscribe(() => {
   saveStateToStorage(store.getState());
 });
+
+// timer to update current time in state
+setInterval(() => {
+  const state = store.getState();
+  const now = new Date();
+  const hour = now.getHours();
+  const month = now.getMonth() + 1;
+
+  if (hour !== state.time.hour || month !== state.time.month) {
+    store.dispatch({
+      type: SET_CURRENT_TIME,
+      hour,
+      month,
+    });
+  }
+}, 60 * 1000);
 
 ReactDOM.render(
   <React.StrictMode>

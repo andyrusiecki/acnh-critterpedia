@@ -64,9 +64,18 @@ export enum DonateFilter {
   SHOW_NOT_DONATED = 'SHOW_NOT_DONATED',
 };
 
+export const SET_CURRENT_TIME = 'SET_CURRENT_TIME';
+
+export interface SetCurrentTimeAction {
+  type: typeof SET_CURRENT_TIME,
+  hour: number,
+  month: number,
+}
+
 export type ActionTypes =
   ToggleDonateAction |
   SetDonateAction |
   SetTimeFilterAction |
   SetFishLocationFilterAction |
-  SetDonateFilterAction;
+  SetDonateFilterAction |
+  SetCurrentTimeAction;
