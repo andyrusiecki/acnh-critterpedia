@@ -11,12 +11,17 @@ import { getStateFromStorage, saveStateToStorage, InitialRootState } from './sha
 import { SET_CURRENT_TIME } from './actions';
 
 // Restore state from storage
-const restoredState = getStateFromStorage();
+const startingState = getStateFromStorage() || InitialRootState;
+
+// update current time in state
+const now = new Date();
+startingState.time.hour = now.getHours();
+startingState.time.month = now.getMonth() + 1;
 
 // Create store
 const store = createStore(
   rootReducer,
-  restoredState || InitialRootState,
+  startingState,
   middleware,
 );
 

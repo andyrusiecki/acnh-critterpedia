@@ -9,6 +9,12 @@ interface FishContainerProps {
   selectedIDs: number[];
   donatedIDs: number[];
 
+  filterDefaultOption: {
+    time?: FilterOption,
+    location?: FilterOption,
+    donate?: FilterOption,
+  },
+
   toggleDonate: (id: number) => void;
   setDonate: (id: number, isDonated: boolean) => void;
   setTimeFilter: (filter: TimeFilter) => void;
@@ -32,6 +38,10 @@ function filterFishByTime(fish: Fish[], currentHour: number, currentMonth: numbe
     case TimeFilter.SHOW_CURRENT_TIME:
       return fish.filter((fish: Fish) => {
         return isAvailableAt(fish, currentHour, currentMonth);
+      });
+    case TimeFilter.SHOW_CURRENT_MONTH:
+      return fish.filter((fish: Fish) => {
+        return isAvailableAt(fish, undefined, currentMonth);
       });
     default:
       return fish;
@@ -96,12 +106,42 @@ function filterFishByDonate(fish: Fish[], donatedIDs: number[], filter: DonateFi
 }
 
 function mapStateToProps(state: RootState) {
+  let defaultTimeFilterOption: FilterOption | undefined;
+  let defaultLocationFilterOption: FilterOption | undefined;
+  let defaultDonateFilterOption: FilterOption | undefined;
+
+  for (let option of timeOptions) {
+    if (option.value === state.fish.timeFilter) {
+      defaultTimeFilterOption = option;
+      break;
+    }
+  }
+
+  for (let option of locationOptions) {
+    if (option.value === state.fish.locationFilter) {
+      defaultLocationFilterOption = option;
+      break;
+    }
+  }
+
+  for (let option of donateOptions) {
+    if (option.value === state.fish.donateFilter) {
+      defaultDonateFilterOption = option;
+      break;
+    }
+  }
+
   return {
     donatedIDs: state.fish.donations,
     selectedIDs: getSelectedFishIDs(
       AllFish,
       state,
     ),
+    filterDefaultOption: {
+      time: defaultTimeFilterOption,
+      location: defaultLocationFilterOption,
+      donate: defaultDonateFilterOption,
+    }
   };
 }
 
@@ -135,8 +175,8 @@ const timeOptions: FilterOption[] = [
     value: TimeFilter.SHOW_CURRENT_TIME,
   },
   {
-    displayName: 'Custom Time',
-    value: TimeFilter.SHOW_CUSTOM_TIME,
+    displayName: 'Current Month',
+    value: TimeFilter.SHOW_CURRENT_MONTH,
   },
 ];
 
@@ -190,9 +230,9 @@ const FishContainer = (props: FishContainerProps) => {
   return (
     <div className="fish-container">
       <div className="filters">
-        <Filter name="time" displayName="Time" options={timeOptions} onUpdate={props.setTimeFilter} />
-        <Filter name="location" displayName="Location" options={locationOptions} onUpdate={props.setLocationFilter} />
-        <Filter name="donate" displayName="Donated" options={donateOptions} onUpdate={props.setDonateFilter} />
+        <Filter name="time" displayName="Time" options={timeOptions} defaultOption={props.filterDefaultOption.time} onUpdate={props.setTimeFilter} />
+        <Filter name="location" displayName="Location" options={locationOptions} defaultOption={props.filterDefaultOption.location} onUpdate={props.setLocationFilter} />
+        <Filter name="donate" displayName="Donated" options={donateOptions} defaultOption={props.filterDefaultOption.donate} onUpdate={props.setDonateFilter} />
       </div>
       <CritterList critters={AllFish} critterType="fish" selectedIDs={props.selectedIDs} donatedIDs={props.donatedIDs} setDonate={props.setDonate}/>
     </div>

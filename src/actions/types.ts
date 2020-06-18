@@ -29,7 +29,7 @@ export interface SetTimeFilterAction {
 export enum TimeFilter {
   SHOW_ALL = 'SHOW_ALL',
   SHOW_CURRENT_TIME = 'SHOW_CURRENT_TIME',
-  SHOW_CUSTOM_TIME = 'SHOW_CUSTOM_TIME',
+  SHOW_CURRENT_MONTH = 'SHOW_CURRENT_MONTH',
 };
 
 // => FishLocation Filter

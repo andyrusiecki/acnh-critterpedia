@@ -16,6 +16,7 @@ interface FilterProps {
   name: string;
   displayName: string;
   options: FilterOption[];
+  defaultOption?: FilterOption;
   onUpdate?: (optionValue: any) => void;
 }
 
@@ -24,7 +25,7 @@ export class Filter extends React.Component<FilterProps, FilterState> {
     super(props);
 
     this.state = {
-      currentOption: props.options[0],
+      currentOption: props.defaultOption || props.options[0],
     };
   }
 
