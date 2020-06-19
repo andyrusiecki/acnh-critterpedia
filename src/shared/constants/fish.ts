@@ -9,6 +9,13 @@ export const FishLocationDisplay: Map<FishLocation, string> = new Map([
   [ FishLocation.Sea, 'Sea' ],
 ]);
 
+export const UniqueFishHourRanges: number[][] = [
+  [4, 8],
+  [9, 15],
+  [16, 20],
+  [21, 3],
+];
+
 export const AllFish: Fish[] = [
   {
     "hourRanges": [

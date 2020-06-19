@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home } from './home';
 import FishContainer from '../containers/fish';
+import TodoContainer from '../containers/todo';
 
 import './main.scss';
 
@@ -17,9 +17,9 @@ export function Main() {
           </section>
         </Route>
         <Route exact path="/">
-          <section className="section-home">
+          <section className="section-todo">
             <div className="container">
-              <Home />
+              <TodoContainer />
             </div>
           </section>
         </Route>

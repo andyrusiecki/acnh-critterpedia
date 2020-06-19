@@ -8,7 +8,7 @@ export function Header() {
     <header>
       <nav>
         <ul>
-          <li><Link to="/">ACNH Critterpedia</Link></li>
+          <li><Link to="/">ToDo List</Link></li>
           <li><Link to="/fish">Fish</Link></li>
         </ul>
       </nav>
