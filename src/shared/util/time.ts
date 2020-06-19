@@ -1,3 +1,4 @@
+import moment from "moment";
 import { Critter } from "../interfaces";
 
 export function isAvailableAt(critter: Critter, hour?: number, month?: number): boolean {
@@ -21,4 +22,12 @@ export function isInTimeRanges(time: number, ranges: number[][]): boolean {
   }
 
   return false;
+}
+
+export function hourToDisplayText(hour: number): string {
+  return moment(hour.toString(), 'H').format('h:00 a');
+}
+
+export function monthToDisplayText(month: number): string {
+  return moment(month.toString(), 'M').format('MMMM');
 }

@@ -1,7 +1,7 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import { setDonate } from '../actions';
-import { Fish, AllFish, RootState, CollectionType, isAvailableAt, UniqueFishHourRanges, } from '../shared';
+import { Fish, AllFish, RootState, CollectionType, isAvailableAt, UniqueFishHourRanges, hourToDisplayText, monthToDisplayText, } from '../shared';
 import { Todo } from '../components/todo';
 
 interface TodoContainerProps {
@@ -12,11 +12,14 @@ interface TodoContainerProps {
 
   nextHourRange: {
     hourRange: number[],
-    fish: Fish[],
+    newFish: Fish[],
+    leavingFish: Fish[],
   },
 
   nextMonth: {
-    fish: Fish[];
+    month: number,
+    newFish: Fish[],
+    leavingFish: Fish[],
   }
 
   setDonate: (collectionType: CollectionType, id: number, isDonated: boolean) => void;
@@ -83,15 +86,30 @@ function getNewFishIDsForNextMonth(fish: Fish[], donatedIDs: number[], month: nu
   }).map((fish: Fish) => fish.id);
 }
 
+function getLeavingFishIDsForNextMonth(fish: Fish[], donatedIDs: number[], month: number): number[] {
+  const nextMonth = month === 12 ? 1 : month + 1;
+
+  return fish.filter((fish: Fish) => {
+    return !donatedIDs.includes(fish.id) &&
+      isAvailableAt(fish, undefined, month) &&
+      !isAvailableAt(fish, undefined, nextMonth);
+  }).map((fish: Fish) => fish.id);
+}
+
 function mapStateToProps(state: RootState) {
   const buckets = getTodoFishPerBuckets(AllFish, state.fish.donations, state.time.month);
   const currentRange = getCurrentFishHourRange(state.time.hour);
   const nextRange = getNextFishHourRange(state.time.hour);
 
   const currentFishIDs = buckets.get(`${currentRange[0]},${currentRange[1]}`) || [];
-  const nextFishIDs = (buckets.get(`${nextRange[0]},${nextRange[1]}`) || [])
-    .filter((id: number) => !currentFishIDs.includes(id));
-  const newFishIDsNextMonth = getNewFishIDsForNextMonth(AllFish, state.fish.donations, state.time.month) || [];
+
+  const nextRangeFishIDs = buckets.get(`${nextRange[0]},${nextRange[1]}`) || [];
+  const nextNewFishIDs = nextRangeFishIDs.filter((id: number) => !currentFishIDs.includes(id));
+  const nextLeavingFishIDs = currentFishIDs.filter((id: number) => !nextRangeFishIDs.includes(id));
+
+
+  const newFishIDsNextMonth = getNewFishIDsForNextMonth(AllFish, state.fish.donations, state.time.month);
+  const leavingFishIDsNextMonth = getLeavingFishIDsForNextMonth(AllFish, state.fish.donations, state.time.month);
 
   return {
     currentHourRange: {
@@ -101,11 +119,14 @@ function mapStateToProps(state: RootState) {
 
     nextHourRange: {
       hourRange: nextRange,
-      fish: AllFish.filter((fish: Fish) => nextFishIDs.includes(fish.id)),
+      newFish: AllFish.filter((fish: Fish) => nextNewFishIDs.includes(fish.id)),
+      leavingFish: AllFish.filter((fish: Fish) => nextLeavingFishIDs.includes(fish.id)),
     },
 
     nextMonth: {
-      fish: AllFish.filter((fish: Fish) => newFishIDsNextMonth.includes(fish.id)),
+      month: state.time.month === 12 ? 1 : state.time.month + 1,
+      newFish: AllFish.filter((fish: Fish) => newFishIDsNextMonth.includes(fish.id)),
+      leavingFish: AllFish.filter((fish: Fish) => leavingFishIDsNextMonth.includes(fish.id)),
     },
   };
 }
@@ -122,8 +143,10 @@ const TodoContainer = (props: TodoContainerProps) => {
   return (
     <div className="todo-container">
       <Todo title="Available Now" fish={props.currentHourRange.fish} setDonate={props.setDonate} />
-      <Todo title="Available Soon" fish={props.nextHourRange.fish} setDonate={props.setDonate} />
-      <Todo title="Available Next Month" fish={props.nextMonth.fish} setDonate={props.setDonate} />
+      <Todo title={`Available at ${hourToDisplayText(props.nextHourRange.hourRange[0])}`} fish={props.nextHourRange.newFish} setDonate={props.setDonate} />
+      <Todo title={`Leaving at ${hourToDisplayText(props.nextHourRange.hourRange[0])}`} fish={props.nextHourRange.leavingFish} setDonate={props.setDonate} />
+      <Todo title={`Available in ${monthToDisplayText(props.nextMonth.month)}`} fish={props.nextMonth.newFish} setDonate={props.setDonate} />
+      <Todo title={`Leaving in ${monthToDisplayText(props.nextMonth.month)}`} fish={props.nextMonth.leavingFish} setDonate={props.setDonate} />
     </div>
   );
 }
