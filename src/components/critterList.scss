@@ -2,7 +2,11 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
+  justify-content: center;
   height: 600px;
+
+  &.hor-layout {
+    flex-direction: row;
+    height: auto;
+  }
 }

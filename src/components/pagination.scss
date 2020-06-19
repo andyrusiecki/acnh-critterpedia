@@ -1,0 +1,50 @@
+.pagination-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .page {
+    display: none;
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.5s;
+
+    &.active {
+      display: block;
+    }
+
+    &.last-left {
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      transform: translate(-100%, 0);
+    }
+
+    &.last-right {
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      transform: translate(100%, 0);
+    }
+  }
+
+  .pagination-controls {
+    text-align: center;
+    padding: 10px;
+
+    & > * {
+      &.hide {
+        visibility: hidden;
+      }
+
+      display: inline-block;
+      margin: 10px;
+      height: 25px;
+      width: 25px;
+      background-color: beige;
+    }
+  }
+}
