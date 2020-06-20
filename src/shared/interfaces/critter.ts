@@ -5,6 +5,7 @@ export interface Critter {
   monthRanges: number[][];
   hourRanges: number[][];
   sellPrice: number;
+  mustBeRaining: boolean;
 }
 
 export enum Rarity {
@@ -12,6 +13,7 @@ export enum Rarity {
   Common = 'common',
   Uncommon = 'uncommon',
   Rare = 'rare',
+  Unknown = 'unknown',
 }
 
 export const RarityDisplay: Map<Rarity, string> = new Map([

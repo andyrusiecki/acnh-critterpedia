@@ -3,7 +3,6 @@ import { Critter } from "./critter";
 export interface Fish extends Critter {
   location: FishLocation;
   shadow: FishShadow;
-  mustBeRaining: boolean;
 }
 
 export enum FishLocation {
