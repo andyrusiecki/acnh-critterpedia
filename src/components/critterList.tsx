@@ -4,10 +4,11 @@ import { CritterTile } from './critterTile';
 import { Pagination } from './pagination';
 
 import './critterList.scss';
+import { CollectionType } from '../shared';
 
 interface CritterListProps<T extends Critter> {
   critters: T[];
-  critterType: 'fish' | 'bug';
+  critterType: CollectionType;
   selectedIDs: number[];
   donatedIDs: number[];
   setDonate: (id: number, isDonated: boolean) => void;

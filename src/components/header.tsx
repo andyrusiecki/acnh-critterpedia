@@ -10,6 +10,7 @@ export function Header() {
         <nav>
           <ul>
             <li><Link to="/">ToDo List</Link></li>
+            <li><Link to="/bugs">Bugs</Link></li>
             <li><Link to="/fish">Fish</Link></li>
           </ul>
         </nav>

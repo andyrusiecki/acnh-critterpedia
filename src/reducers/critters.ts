@@ -5,6 +5,7 @@ export function getCritterReducer(collectionType: CollectionType) {
   return function(state: CollectionState = (collectionType === "bugs" ? InitialRootState.bugs : InitialRootState.fish), action: Action): CollectionState {
     switch (action.type) {
       case ActionType.ToggleDonate:
+        if (action.collectionType !== collectionType) return state;
         const index = state.donations.indexOf(action.id);
         const donateIDs = state.donations;
 
@@ -22,6 +23,7 @@ export function getCritterReducer(collectionType: CollectionType) {
           },
         );
       case ActionType.SetDonate:
+        if (action.collectionType !== collectionType) return state;
         const setIndex = state.donations.indexOf(action.id);
         const setDonateIDs = state.donations;
 
@@ -39,6 +41,7 @@ export function getCritterReducer(collectionType: CollectionType) {
           },
         );
       case ActionType.SetTimeFilter:
+        if (action.collectionType !== collectionType) return state;
         return Object.assign(
           {},
           state,
@@ -47,6 +50,7 @@ export function getCritterReducer(collectionType: CollectionType) {
           },
         );
       case ActionType.SetLocationFilter:
+        if (action.collectionType !== collectionType) return state;
         return Object.assign(
           {},
           state,
@@ -55,6 +59,7 @@ export function getCritterReducer(collectionType: CollectionType) {
           },
         );
       case ActionType.SetDonateFilter:
+        if (action.collectionType !== collectionType) return state;
         return Object.assign(
           {},
           state,

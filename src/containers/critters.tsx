@@ -6,7 +6,6 @@ import { Filter, FilterOption } from '../components/filter';
 import { CritterList } from '../components/critterList';
 
 interface CritterContainerProps {
-  collectionType: CollectionType;
   selectedIDs: number[];
   donatedIDs: number[];
 
@@ -16,11 +15,11 @@ interface CritterContainerProps {
     donate?: FilterOption,
   },
 
-  toggleDonate: (collectionType: CollectionType, id: number) => void;
-  setDonate: (collectionType: CollectionType, id: number, isDonated: boolean) => void;
-  setTimeFilter: (collectionType: CollectionType, filter: TimeFilter) => void;
-  setLocationFilter: (collectionType: CollectionType, filter: BugLocationFilter | FishLocationFilter) => void;
-  setDonateFilter: (collectionType: CollectionType, filter: DonateFilter) => void;
+  toggleDonate: (id: number) => void;
+  setDonate: (id: number, isDonated: boolean) => void;
+  setTimeFilter: (filter: TimeFilter) => void;
+  setLocationFilter: (filter: BugLocationFilter | FishLocationFilter) => void;
+  setDonateFilter: (filter: DonateFilter) => void;
 }
 
 function getCollectionState(collectionType: CollectionType, rootState: RootState): CollectionState {
@@ -153,6 +152,7 @@ function getMapStateToPropsFunc(collectionType: CollectionType) {
       }
     }
 
+    const locationOptions: FilterOption[] = collectionType === 'bugs' ? bugLocationOptions : fishLocationOptions;
     for (let option of locationOptions) {
       if (option.value === collectionState.locationFilter) {
         defaultLocationFilterOption = option;
@@ -221,7 +221,7 @@ const timeOptions: FilterOption[] = [
 ];
 
 // TODO: Continue here
-const locationOptions: FilterOption[] = [
+const fishLocationOptions: FilterOption[] = [
   {
     displayName: 'All',
     value: FishLocationFilter.SHOW_ALL,
@@ -252,6 +252,93 @@ const locationOptions: FilterOption[] = [
   },
 ];
 
+const bugLocationOptions: FilterOption[] = [
+  {
+    displayName: 'All',
+    value: BugLocationFilter.SHOW_ALL,
+  },
+  {
+    displayName: 'Beach',
+    value: BugLocationFilter.SHOW_BEACH,
+  },
+  {
+    displayName: 'Beach Rocks',
+    value: BugLocationFilter.SHOW_BEACH_ROCKS,
+  },
+  {
+    displayName: 'Near Building Lights',
+    value: BugLocationFilter.SHOW_BUILDING_LIGHTS,
+  },
+  {
+    displayName: 'Flowers',
+    value: BugLocationFilter.SHOW_FLOWERS,
+  },
+  {
+    displayName: 'Flying',
+    value: BugLocationFilter.SHOW_FLYING,
+  },
+  {
+    displayName: 'Flying Near Flowers',
+    value: BugLocationFilter.SHOW_FLYING_FLOWERS,
+  },
+  {
+    displayName: 'Ground',
+    value: BugLocationFilter.SHOW_GROUND,
+  },
+  {
+    displayName: 'On Palm Trees',
+    value: BugLocationFilter.SHOW_PALM_TREES,
+  },
+  {
+    displayName: 'On Rocks',
+    value: BugLocationFilter.SHOW_ROCKS,
+  },
+  {
+    displayName: 'Near Rotten Turnips',
+    value: BugLocationFilter.SHOW_ROTTEN_TURNIPS,
+  },
+  {
+    displayName: 'Shaking Trees',
+    value: BugLocationFilter.SHOW_SHAKING_TREES,
+  },
+  {
+    displayName: 'Snowballs',
+    value: BugLocationFilter.SHOW_SNOWBALL,
+  },
+  {
+    displayName: 'Near Trash',
+    value: BugLocationFilter.SHOW_TRASH,
+  },
+  {
+    displayName: 'On Trees',
+    value: BugLocationFilter.SHOW_TREES,
+  },
+  {
+    displayName: 'Tree Stumps',
+    value: BugLocationFilter.SHOW_TREE_STUMPS,
+  },
+  {
+    displayName: 'Underground',
+    value: BugLocationFilter.SHOW_UNDERGROUND,
+  },
+  {
+    displayName: 'Under Rocks',
+    value: BugLocationFilter.SHOW_UNDER_ROCKS,
+  },
+  {
+    displayName: 'Under Trees',
+    value: BugLocationFilter.SHOW_UNDER_TREES,
+  },
+  {
+    displayName: 'Villagers',
+    value: BugLocationFilter.SHOW_VILLAGERS,
+  },
+  {
+    displayName: 'Water Surface',
+    value: BugLocationFilter.SHOW_WATER_SURFACE,
+  },
+];
+
 const donateOptions: FilterOption[] = [
   {
     displayName: 'All',
@@ -267,12 +354,12 @@ const donateOptions: FilterOption[] = [
   },
 ];
 
-const FishContainer = (props: CritterContainerProps) => {
+const FishContainerComponent = (props: CritterContainerProps) => {
   return (
     <div className="fish-container">
       <div className="filters">
         <Filter name="time" displayName="Time" options={timeOptions} defaultOption={props.filterDefaultOption.time} onUpdate={props.setTimeFilter} />
-        <Filter name="location" displayName="Location" options={locationOptions} defaultOption={props.filterDefaultOption.location} onUpdate={props.setLocationFilter} />
+        <Filter name="location" displayName="Location" options={fishLocationOptions} defaultOption={props.filterDefaultOption.location} onUpdate={props.setLocationFilter} />
         <Filter name="donate" displayName="Donated" options={donateOptions} defaultOption={props.filterDefaultOption.donate} onUpdate={props.setDonateFilter} />
       </div>
       <CritterList critters={AllFish} critterType="fish" selectedIDs={props.selectedIDs} donatedIDs={props.donatedIDs} setDonate={props.setDonate}/>
@@ -280,17 +367,18 @@ const FishContainer = (props: CritterContainerProps) => {
   );
 }
 
-const FishContainer = (props: CritterContainerProps) => {
+const BugsContainerComponent = (props: CritterContainerProps) => {
   return (
-    <div className="fish-container">
+    <div className="bugs-container">
       <div className="filters">
         <Filter name="time" displayName="Time" options={timeOptions} defaultOption={props.filterDefaultOption.time} onUpdate={props.setTimeFilter} />
-        <Filter name="location" displayName="Location" options={locationOptions} defaultOption={props.filterDefaultOption.location} onUpdate={props.setLocationFilter} />
+        <Filter name="location" displayName="Location" options={bugLocationOptions} defaultOption={props.filterDefaultOption.location} onUpdate={props.setLocationFilter} />
         <Filter name="donate" displayName="Donated" options={donateOptions} defaultOption={props.filterDefaultOption.donate} onUpdate={props.setDonateFilter} />
       </div>
-      <CritterList critters={AllFish} critterType="fish" selectedIDs={props.selectedIDs} donatedIDs={props.donatedIDs} setDonate={props.setDonate}/>
+      <CritterList critters={AllBugs} critterType="bugs" selectedIDs={props.selectedIDs} donatedIDs={props.donatedIDs} setDonate={props.setDonate}/>
     </div>
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FishContainer)
+export const FishContainer = connect(getMapStateToPropsFunc('fish'), getMapDispatchToPropsFunc('fish'))(FishContainerComponent);
+export const BugsContainer = connect(getMapStateToPropsFunc('bugs'), getMapDispatchToPropsFunc('bugs'))(BugsContainerComponent);

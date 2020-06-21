@@ -1,9 +1,9 @@
-import { ActionTypes, SET_CURRENT_TIME } from "../actions";
+import { ActionType, Action } from "../actions";
 import { CurrentTimeState, InitialRootState } from "../shared";
 
-export function time(state: CurrentTimeState = InitialRootState.time, action: ActionTypes): CurrentTimeState {
+export function time(state: CurrentTimeState = InitialRootState.time, action: Action): CurrentTimeState {
   switch (action.type) {
-    case SET_CURRENT_TIME:
+    case ActionType.SetCurrentTime:
       return Object.assign(
         {},
         state,

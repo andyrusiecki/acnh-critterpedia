@@ -8,7 +8,7 @@ import middleware from './middleware';
 import './index.scss';
 import App from './components/app';
 import { getStateFromStorage, saveStateToStorage, InitialRootState } from './shared';
-import { SET_CURRENT_TIME } from './actions';
+import { ActionType } from './actions';
 
 // Restore state from storage
 const startingState = getStateFromStorage() || InitialRootState;
@@ -39,7 +39,7 @@ setInterval(() => {
 
   if (hour !== state.time.hour || month !== state.time.month) {
     store.dispatch({
-      type: SET_CURRENT_TIME,
+      type: ActionType.SetCurrentTime,
       hour,
       month,
     });

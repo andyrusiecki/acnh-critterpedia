@@ -1,12 +1,12 @@
 import React from 'react';
 import { Critter } from '../shared/interfaces';
-import { getFullURL } from '../shared';
+import { getFullURL, CollectionType } from '../shared';
 
 import './critterTile.scss';
 
 interface CritterTileProps<T extends Critter> {
   critter: T;
-  critterType: 'fish' | 'bug';
+  critterType: CollectionType;
   active: boolean;
   donated: boolean;
   setDonate: (id: number, isDonated: boolean) => void;
