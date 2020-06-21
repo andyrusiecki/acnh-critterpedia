@@ -1,5 +1,8 @@
+import { CollectionType } from "../types";
+
 export interface Critter {
   id: number;
+  type: CollectionType;
   name: string;
   rarity: Rarity;
   monthRanges: number[][];

@@ -27,6 +27,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 1,
+    "type": "bugs",
     "name": "Common Butterfly",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Flying,
@@ -46,6 +47,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 2,
+    "type": "bugs",
     "name": "Yellow Butterfly",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Flying,
@@ -65,6 +67,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 3,
+    "type": "bugs",
     "name": "Tiger Butterfly",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Flying,
@@ -83,6 +86,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 4,
+    "type": "bugs",
     "name": "Peacock Butterfly",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.FlyingFlowers,
@@ -101,6 +105,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 5,
+    "type": "bugs",
     "name": "Common Bluebottle",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Flying,
@@ -119,6 +124,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 6,
+    "type": "bugs",
     "name": "Paper Kite Butterfly",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.FlyingFlowers,
@@ -137,6 +143,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 7,
+    "type": "bugs",
     "name": "Great Purple Emperor",
     "rarity": Rarity.Common,
     "location": BugLocation.FlyingFlowers,
@@ -155,6 +162,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 8,
+    "type": "bugs",
     "name": "Monarch Butterfly",
     "rarity": Rarity.Common,
     "location": BugLocation.FlyingFlowers,
@@ -173,6 +181,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 9,
+    "type": "bugs",
     "name": "Emperor Butterfly",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.FlyingFlowers,
@@ -194,6 +203,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 10,
+    "type": "bugs",
     "name": "Agrias Butterfly",
     "rarity": Rarity.Common,
     "location": BugLocation.FlyingFlowers,
@@ -212,6 +222,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 11,
+    "type": "bugs",
     "name": "Rajah Brooke's Birdwing",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.FlyingFlowers,
@@ -232,6 +243,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 12,
+    "type": "bugs",
     "name": "Queen Alexandra's Birdwing",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.FlyingFlowers,
@@ -250,6 +262,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 13,
+    "type": "bugs",
     "name": "Moth",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.BuildingLights,
@@ -269,6 +282,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 14,
+    "type": "bugs",
     "name": "Atlas Moth",
     "rarity": Rarity.Common,
     "location": BugLocation.Trees,
@@ -288,6 +302,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 15,
+    "type": "bugs",
     "name": "Madagascan Sunset Moth",
     "rarity": Rarity.Common,
     "location": BugLocation.FlyingFlowers,
@@ -306,6 +321,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 16,
+    "type": "bugs",
     "name": "Long Locust",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Ground,
@@ -324,6 +340,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 17,
+    "type": "bugs",
     "name": "Migratory Locust",
     "rarity": Rarity.Common,
     "location": BugLocation.Ground,
@@ -342,6 +359,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 18,
+    "type": "bugs",
     "name": "Rice Grasshopper",
     "rarity": Rarity.Common,
     "location": BugLocation.Ground,
@@ -360,6 +378,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 19,
+    "type": "bugs",
     "name": "Grasshopper",
     "rarity": Rarity.Common,
     "location": BugLocation.Ground,
@@ -378,6 +397,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 20,
+    "type": "bugs",
     "name": "Cricket",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Ground,
@@ -397,6 +417,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 21,
+    "type": "bugs",
     "name": "Bell Cricket",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Ground,
@@ -416,6 +437,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 22,
+    "type": "bugs",
     "name": "Mantis",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Flowers,
@@ -434,6 +456,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 23,
+    "type": "bugs",
     "name": "Orchid Mantis",
     "rarity": Rarity.Common,
     "location": BugLocation.Flowers,
@@ -452,6 +475,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 24,
+    "type": "bugs",
     "name": "Honeybee",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.FlyingFlowers,
@@ -470,6 +494,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 25,
+    "type": "bugs",
     "name": "Wasp",
     "rarity": Rarity.Unknown,
     "location": BugLocation.ShakingTrees,
@@ -488,6 +513,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 26,
+    "type": "bugs",
     "name": "Brown Cicada",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Trees,
@@ -506,6 +532,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 27,
+    "type": "bugs",
     "name": "Robust Cicada",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Trees,
@@ -524,6 +551,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 28,
+    "type": "bugs",
     "name": "Giant Cicada",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Trees,
@@ -542,6 +570,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 29,
+    "type": "bugs",
     "name": "Walker Cicada",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Trees,
@@ -560,6 +589,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 30,
+    "type": "bugs",
     "name": "Evening Cicada",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Trees,
@@ -579,6 +609,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 31,
+    "type": "bugs",
     "name": "Cicada Shell",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.Trees,
@@ -597,6 +628,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 32,
+    "type": "bugs",
     "name": "Red DragonFly",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Flying,
@@ -615,6 +647,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 33,
+    "type": "bugs",
     "name": "Darner Dragonfly",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Flying,
@@ -633,6 +666,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 34,
+    "type": "bugs",
     "name": "Banded Dragonfly",
     "rarity": Rarity.Common,
     "location": BugLocation.Flying,
@@ -651,6 +685,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 35,
+    "type": "bugs",
     "name": "Damselfly",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Flying,
@@ -670,6 +705,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 36,
+    "type": "bugs",
     "name": "Firefly",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Flying,
@@ -689,6 +725,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 37,
+    "type": "bugs",
     "name": "Mole Cricket",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.Underground,
@@ -708,6 +745,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 38,
+    "type": "bugs",
     "name": "Pondskater",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.WaterSurface,
@@ -726,6 +764,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 39,
+    "type": "bugs",
     "name": "Diving Beetle",
     "rarity": Rarity.Common,
     "location": BugLocation.WaterSurface,
@@ -744,6 +783,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 40,
+    "type": "bugs",
     "name": "Giant Water Bug",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.WaterSurface,
@@ -763,6 +803,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 41,
+    "type": "bugs",
     "name": "Stinkbug",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Flowers,
@@ -781,6 +822,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 42,
+    "type": "bugs",
     "name": "Man-faced Stink Bug",
     "rarity": Rarity.Common,
     "location": BugLocation.Flowers,
@@ -800,6 +842,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 43,
+    "type": "bugs",
     "name": "Ladybug",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Flowers,
@@ -819,6 +862,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 44,
+    "type": "bugs",
     "name": "Tiger Beetle",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Ground,
@@ -837,6 +881,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 45,
+    "type": "bugs",
     "name": "Jewel Beetle",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.TreeStumps,
@@ -855,6 +900,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 46,
+    "type": "bugs",
     "name": "Violin Beetle",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.TreeStumps,
@@ -874,6 +920,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 47,
+    "type": "bugs",
     "name": "Citrus Long-Horned Beetle",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.TreeStumps,
@@ -892,6 +939,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 48,
+    "type": "bugs",
     "name": "Rosalia Batesi Beetle",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.TreeStumps,
@@ -910,6 +958,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 49,
+    "type": "bugs",
     "name": "Blue Weevil Beetle",
     "rarity": Rarity.Common,
     "location": BugLocation.PalmTrees,
@@ -928,6 +977,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 50,
+    "type": "bugs",
     "name": "Dung Beetle",
     "rarity": Rarity.Common,
     "location": BugLocation.Snowball,
@@ -947,6 +997,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 51,
+    "type": "bugs",
     "name": "Earth-Boring Dung Beetle",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Ground,
@@ -965,6 +1016,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 52,
+    "type": "bugs",
     "name": "Scarab Beetle",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.Trees,
@@ -984,6 +1036,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 53,
+    "type": "bugs",
     "name": "Drone Beetle",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Trees,
@@ -1002,6 +1055,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 54,
+    "type": "bugs",
     "name": "Goliath Beetle",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.PalmTrees,
@@ -1021,6 +1075,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 55,
+    "type": "bugs",
     "name": "Saw Stag",
     "rarity": Rarity.Common,
     "location": BugLocation.Trees,
@@ -1039,6 +1094,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 56,
+    "type": "bugs",
     "name": "Miyama Stag",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Trees,
@@ -1057,6 +1113,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 57,
+    "type": "bugs",
     "name": "Giant Stag",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.Trees,
@@ -1076,6 +1133,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 58,
+    "type": "bugs",
     "name": "Rainbow Stag",
     "rarity": Rarity.Common,
     "location": BugLocation.Trees,
@@ -1095,6 +1153,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 59,
+    "type": "bugs",
     "name": "Cyclommatus Stag",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.PalmTrees,
@@ -1114,6 +1173,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 60,
+    "type": "bugs",
     "name": "Golden Stag",
     "rarity": Rarity.Rare,
     "location": BugLocation.PalmTrees,
@@ -1133,6 +1193,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 61,
+    "type": "bugs",
     "name": "Giraffe Stag",
     "rarity": Rarity.Rare,
     "location": BugLocation.PalmTrees,
@@ -1152,6 +1213,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 62,
+    "type": "bugs",
     "name": "Horned Dynastid",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Trees,
@@ -1171,6 +1233,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 63,
+    "type": "bugs",
     "name": "Horned Atlas",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.PalmTrees,
@@ -1190,6 +1253,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 64,
+    "type": "bugs",
     "name": "Horned Elephant",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.PalmTrees,
@@ -1209,6 +1273,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 65,
+    "type": "bugs",
     "name": "Horned Hercules",
     "rarity": Rarity.Rare,
     "location": BugLocation.PalmTrees,
@@ -1228,6 +1293,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 66,
+    "type": "bugs",
     "name": "Walking Stick",
     "rarity": Rarity.Rare,
     "location": BugLocation.Trees,
@@ -1247,6 +1313,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 67,
+    "type": "bugs",
     "name": "Walking Leaf",
     "rarity": Rarity.Common,
     "location": BugLocation.UnderTrees,
@@ -1265,6 +1332,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 68,
+    "type": "bugs",
     "name": "Bagworm",
     "rarity": Rarity.Unknown,
     "location": BugLocation.ShakingTrees,
@@ -1283,6 +1351,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 69,
+    "type": "bugs",
     "name": "Ant",
     "rarity": Rarity.Unknown,
     "location": BugLocation.RottenTurnips,
@@ -1301,6 +1370,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 70,
+    "type": "bugs",
     "name": "Hermit Crab",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Beach,
@@ -1320,6 +1390,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 71,
+    "type": "bugs",
     "name": "Wharf Roach",
     "rarity": Rarity.Common,
     "location": BugLocation.BeachRocks,
@@ -1338,6 +1409,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 72,
+    "type": "bugs",
     "name": "Fly",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.Trash,
@@ -1356,6 +1428,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 73,
+    "type": "bugs",
     "name": "Mosquito",
     "rarity": Rarity.Common,
     "location": BugLocation.Flying,
@@ -1375,6 +1448,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 74,
+    "type": "bugs",
     "name": "Flea",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.Villagers,
@@ -1393,6 +1467,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 75,
+    "type": "bugs",
     "name": "Snail",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.Rocks,
@@ -1411,6 +1486,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 76,
+    "type": "bugs",
     "name": "Pill Bug",
     "rarity": Rarity.VeryCommon,
     "location": BugLocation.UnderRocks,
@@ -1431,6 +1507,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 77,
+    "type": "bugs",
     "name": "Centipede",
     "rarity": Rarity.Common,
     "location": BugLocation.UnderRocks,
@@ -1451,6 +1528,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 78,
+    "type": "bugs",
     "name": "Spider",
     "rarity": Rarity.Unknown,
     "location": BugLocation.ShakingTrees,
@@ -1470,6 +1548,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 79,
+    "type": "bugs",
     "name": "Tarantula",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.Ground,
@@ -1490,6 +1569,7 @@ export const AllBugs: Bug[] = [
   {
 
     "id": 80,
+    "type": "bugs",
     "name": "Scorpion",
     "rarity": Rarity.Uncommon,
     "location": BugLocation.Ground,

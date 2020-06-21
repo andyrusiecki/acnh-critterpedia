@@ -4,11 +4,9 @@ import { CritterTile } from './critterTile';
 import { Pagination } from './pagination';
 
 import './critterList.scss';
-import { CollectionType } from '../shared';
 
-interface CritterListProps<T extends Critter> {
-  critters: T[];
-  critterType: CollectionType;
+interface CritterListProps {
+  critters: Critter[];
   selectedIDs: number[];
   donatedIDs: number[];
   setDonate: (id: number, isDonated: boolean) => void;
@@ -19,13 +17,13 @@ interface CritterListState {
   currentPage: number;
 }
 
-export class CritterList<T extends Critter> extends React.Component<CritterListProps<T>, CritterListState> {
+export class CritterList<T extends Critter> extends React.Component<CritterListProps, CritterListState> {
   readonly MIN_WIDTH_PAGINATION: number = 992; // same as container media query
   readonly MAX_PER_PAGE: number = 40;
 
   private resizeHandler: () => void;
 
-  constructor(props: CritterListProps<T>) {
+  constructor(props: CritterListProps) {
     super(props);
 
     this.state = {
@@ -74,11 +72,11 @@ export class CritterList<T extends Critter> extends React.Component<CritterListP
           const show = this.props.selectedIDs.includes(this.props.critters[k].id);
           const donated = this.props.donatedIDs.includes(this.props.critters[k].id);
 
-          items.push(<CritterTile<T> critter={this.props.critters[k]} critterType={this.props.critterType} active={show} donated={donated} setDonate={this.props.setDonate} />)
+          items.push(<CritterTile critter={this.props.critters[k]} active={show} donated={donated} setDonate={this.props.setDonate} />)
         }
 
         pages.push(
-          <div className={`critter-list ${this.props.critterType}`}>
+          <div className="critter-list">
             {items}
           </div>
         )
@@ -89,13 +87,13 @@ export class CritterList<T extends Critter> extends React.Component<CritterListP
     }
 
     return (
-      <div className={`critter-list hor-layout ${this.props.critterType}`}>
-        {this.props.critters.map((critter: T) => {
+      <div className="critter-list hor-layout">
+        {this.props.critters.map((critter: Critter) => {
           const show = this.props.selectedIDs.includes(critter.id);
           const donated = this.props.donatedIDs.includes(critter.id);
 
           return (
-            <CritterTile<T> critter={critter} critterType={this.props.critterType} active={show} donated={donated} setDonate={this.props.setDonate} />
+            <CritterTile critter={critter} active={show} donated={donated} setDonate={this.props.setDonate} />
           );
         })}
       </div>

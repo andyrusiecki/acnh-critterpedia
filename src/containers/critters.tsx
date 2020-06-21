@@ -362,7 +362,7 @@ const FishContainerComponent = (props: CritterContainerProps) => {
         <Filter name="location" displayName="Location" options={fishLocationOptions} defaultOption={props.filterDefaultOption.location} onUpdate={props.setLocationFilter} />
         <Filter name="donate" displayName="Donated" options={donateOptions} defaultOption={props.filterDefaultOption.donate} onUpdate={props.setDonateFilter} />
       </div>
-      <CritterList critters={AllFish} critterType="fish" selectedIDs={props.selectedIDs} donatedIDs={props.donatedIDs} setDonate={props.setDonate}/>
+      <CritterList critters={AllFish} selectedIDs={props.selectedIDs} donatedIDs={props.donatedIDs} setDonate={props.setDonate}/>
     </div>
   );
 }
@@ -375,7 +375,7 @@ const BugsContainerComponent = (props: CritterContainerProps) => {
         <Filter name="location" displayName="Location" options={bugLocationOptions} defaultOption={props.filterDefaultOption.location} onUpdate={props.setLocationFilter} />
         <Filter name="donate" displayName="Donated" options={donateOptions} defaultOption={props.filterDefaultOption.donate} onUpdate={props.setDonateFilter} />
       </div>
-      <CritterList critters={AllBugs} critterType="bugs" selectedIDs={props.selectedIDs} donatedIDs={props.donatedIDs} setDonate={props.setDonate}/>
+      <CritterList critters={AllBugs} selectedIDs={props.selectedIDs} donatedIDs={props.donatedIDs} setDonate={props.setDonate}/>
     </div>
   );
 }
