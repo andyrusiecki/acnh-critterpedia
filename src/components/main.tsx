@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import FishContainer from '../containers/fish';
+import FishContainer from '../containers/critters';
 import TodoContainer from '../containers/todo';
 
 import './main.scss';

@@ -1,17 +1,31 @@
 import { CollectionType } from '../shared';
 
-// Donate Actions
-export const TOGGLE_DONATE = 'TOGGLE_DONATE';
-export const SET_DONATE = 'SET_DONATE';
+export enum ActionType {
+  ToggleDonate,
+  SetDonate,
+  SetTimeFilter,
+  SetLocationFilter,
+  SetDonateFilter,
+  SetCurrentTime,
+}
 
+export type Action =
+  ToggleDonateAction |
+  SetDonateAction |
+  SetTimeFilterAction |
+  SetLocationFilterAction |
+  SetDonateFilterAction |
+  SetCurrentTimeAction;
+
+// Donate Actions
 export interface ToggleDonateAction {
-  type: typeof TOGGLE_DONATE;
+  type: ActionType.ToggleDonate;
   collectionType: CollectionType;
   id: number;
 }
 
 export interface SetDonateAction {
-  type: typeof SET_DONATE;
+  type: ActionType.SetDonate;
   collectionType: CollectionType;
   id: number;
   value: boolean;
@@ -19,63 +33,77 @@ export interface SetDonateAction {
 
 // Filter Actions
 // => Time Filter
-export const SET_TIME_FILTER = 'SET_TIME_FILTER';
-
 export interface SetTimeFilterAction {
-  type: typeof SET_TIME_FILTER,
+  type: ActionType.SetTimeFilter,
+  collectionType: CollectionType;
   filter: TimeFilter,
 }
 
 export enum TimeFilter {
-  SHOW_ALL = 'SHOW_ALL',
-  SHOW_CURRENT_TIME = 'SHOW_CURRENT_TIME',
-  SHOW_CURRENT_MONTH = 'SHOW_CURRENT_MONTH',
+  SHOW_ALL,
+  SHOW_CURRENT_TIME,
+  SHOW_CURRENT_MONTH,
 };
 
 // => FishLocation Filter
-export const SET_FISH_LOCATION_FILTER = 'SET_FISH_LOCATION_FILTER';
-
-export interface SetFishLocationFilterAction {
-  type: typeof SET_FISH_LOCATION_FILTER,
-  filter: FishLocationFilter,
+export interface SetLocationFilterAction {
+  type: ActionType.SetLocationFilter,
+  collectionType: CollectionType,
+  filter: FishLocationFilter | BugLocationFilter,
 }
 
 export enum FishLocationFilter {
-  SHOW_ALL = 'SHOW_ALL',
-  SHOW_CLIFF_TOP = 'SHOW_CLIFF_TOP',
-  SHOW_PIER = 'SHOW_PIER',
-  SHOW_POND = 'SHOW_POND',
-  SHOW_RIVER = 'SHOW_RIVER',
-  SHOW_RIVER_MOUTH = 'SHOW_RIVER_MOUTH',
-  SHOW_SEA = 'SHOW_SEA',
+  SHOW_ALL,
+  SHOW_CLIFF_TOP,
+  SHOW_PIER,
+  SHOW_POND,
+  SHOW_RIVER,
+  SHOW_RIVER_MOUTH,
+  SHOW_SEA,
+}
+
+export enum BugLocationFilter {
+  SHOW_ALL,
+  SHOW_BEACH,
+  SHOW_BEACH_ROCKS,
+  SHOW_BUILDING_LIGHTS,
+  SHOW_FLOWERS,
+  SHOW_FLYING,
+  SHOW_FLYING_FLOWERS,
+  SHOW_GROUND,
+  SHOW_PALM_TREES,
+  SHOW_ROCKS,
+  SHOW_ROTTEN_TURNIPS,
+  SHOW_SHAKING_TREES,
+  SHOW_SNOWBALL,
+  SHOW_TRASH,
+  SHOW_TREES,
+  SHOW_TREE_STUMPS,
+  SHOW_UNDERGROUND,
+  SHOW_UNDER_ROCKS,
+  SHOW_UNDER_TREES,
+  SHOW_VILLAGERS,
+  SHOW_WATER_SURFACE,
 }
 
 // => Donated Filter
-export const SET_DONATE_FILTER = 'SET_DONATE_FILTER';
-
 export interface SetDonateFilterAction {
-  type: typeof SET_DONATE_FILTER,
+  type: ActionType.SetDonateFilter,
+  collectionType: CollectionType,
   filter: DonateFilter,
 }
 
 export enum DonateFilter {
-  SHOW_ALL = 'SHOW_ALL',
-  SHOW_DONATED = 'SHOW_DONATED',
-  SHOW_NOT_DONATED = 'SHOW_NOT_DONATED',
+  SHOW_ALL,
+  SHOW_DONATED,
+  SHOW_NOT_DONATED,
 };
 
-export const SET_CURRENT_TIME = 'SET_CURRENT_TIME';
-
+// Current Time
 export interface SetCurrentTimeAction {
-  type: typeof SET_CURRENT_TIME,
+  type: ActionType.SetCurrentTime,
   hour: number,
   month: number,
 }
 
-export type ActionTypes =
-  ToggleDonateAction |
-  SetDonateAction |
-  SetTimeFilterAction |
-  SetFishLocationFilterAction |
-  SetDonateFilterAction |
-  SetCurrentTimeAction;
+

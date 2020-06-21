@@ -1,17 +1,17 @@
 import { CollectionType } from '../shared';
-import { TOGGLE_DONATE, SET_DONATE, ActionTypes } from './types';
+import { Action, ActionType } from './types';
 
-export function toggleDonate(collectionType: CollectionType, id: number): ActionTypes {
+export function toggleDonate(collectionType: CollectionType, id: number): Action {
   return {
-    type: TOGGLE_DONATE,
+    type: ActionType.ToggleDonate,
     collectionType,
     id,
   };
 }
 
-export function setDonate(collectionType: CollectionType, id: number, value: boolean): ActionTypes {
+export function setDonate(collectionType: CollectionType, id: number, value: boolean): Action {
   return {
-    type: SET_DONATE,
+    type: ActionType.SetDonate,
     collectionType,
     id,
     value,

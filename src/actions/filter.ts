@@ -1,29 +1,33 @@
-import { TimeFilter, SET_TIME_FILTER, ActionTypes, FishLocationFilter, SET_FISH_LOCATION_FILTER, DonateFilter, SET_DONATE_FILTER, SET_CURRENT_TIME } from './types';
+import { TimeFilter, Action, ActionType, FishLocationFilter, DonateFilter, BugLocationFilter } from './types';
+import { CollectionType } from '../shared';
 
-export function setTimeFilter(filter: TimeFilter): ActionTypes {
+export function setTimeFilter(collectionType: CollectionType, filter: TimeFilter): Action {
   return {
-    type: SET_TIME_FILTER,
+    type: ActionType.SetTimeFilter,
+    collectionType,
     filter,
   };
 }
 
-export function setFishLocationFilter(filter: FishLocationFilter): ActionTypes {
+export function setLocationFilter(collectionType: CollectionType, filter: FishLocationFilter | BugLocationFilter): Action {
   return {
-    type: SET_FISH_LOCATION_FILTER,
+    type: ActionType.SetLocationFilter,
+    collectionType,
     filter,
   };
 }
 
-export function setDonateFilter(filter: DonateFilter): ActionTypes {
+export function setDonateFilter(collectionType: CollectionType, filter: DonateFilter): Action {
   return {
-    type: SET_DONATE_FILTER,
+    type: ActionType.SetDonateFilter,
+    collectionType,
     filter,
   };
 }
 
-export function setCurrentTime(hour: number, month: number): ActionTypes {
+export function setCurrentTime(hour: number, month: number): Action {
   return {
-    type: SET_CURRENT_TIME,
+    type: ActionType.SetCurrentTime,
     hour,
     month,
   };

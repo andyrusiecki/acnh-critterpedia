@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import { fish } from './fish';
+import { getCritterReducer } from './critters';
 import { time } from './time';
 
 export default combineReducers({
   time,
-  fish,
+  fish: getCritterReducer("fish"),
+  bugs: getCritterReducer("bugs"),
 })

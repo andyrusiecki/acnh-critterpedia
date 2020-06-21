@@ -1,1 +1,1 @@
-export type CollectionType = 'fish' | 'bug';
+export type CollectionType = 'fish' | 'bugs';
