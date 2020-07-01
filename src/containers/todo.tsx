@@ -32,7 +32,7 @@ function getCurrentHourRange(hour: number): number[] {
     // check if this range spills over to the next day
     if (start > end) end += 24;
 
-    if (start <= hour && hour <= end) {
+    if (start <= hour && hour < end) {
       return range;
     }
   }
@@ -49,7 +49,7 @@ function getNextHourRange(hour: number): number[] {
     // check if this range spills over to the next day
     if (start > end) end += 24;
 
-    if (start <= hour && hour <= end) {
+    if (start <= hour && hour < end) {
       return UniqueCritterHourRanges[i + 1 < UniqueCritterHourRanges.length ? i + 1 : 0];
     }
   }
