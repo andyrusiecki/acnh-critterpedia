@@ -1,5 +1,5 @@
-import { CollectionType } from '../shared';
-import { Action, ActionType } from './types';
+import { CollectionType } from '../types';
+import { Action, ActionType } from './actionTypes';
 
 export function toggleDonate(collectionType: CollectionType, id: number): Action {
   return {

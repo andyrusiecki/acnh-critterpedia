@@ -1,8 +1,21 @@
 import { Action, ActionType } from "../actions";
-import { CollectionState, InitialRootState, CollectionType } from "../shared";
+import { CollectionState, CollectionType } from "../types";
+import { InitialRootState } from "../data";
+
+function getInitialCritterState(collectionType: CollectionType): CollectionState {
+  if (collectionType === "bugs") {
+    return InitialRootState.bugs;
+  }
+
+  if (collectionType === "fish") {
+    return InitialRootState.fish;
+  }
+
+  return InitialRootState.seaCreatures;
+}
 
 export function getCritterReducer(collectionType: CollectionType) {
-  return function(state: CollectionState = (collectionType === "bugs" ? InitialRootState.bugs : InitialRootState.fish), action: Action): CollectionState {
+  return function(state: CollectionState = getInitialCritterState(collectionType), action: Action): CollectionState {
     switch (action.type) {
       case ActionType.ToggleDonate:
         if (action.collectionType !== collectionType) return state;
@@ -51,6 +64,7 @@ export function getCritterReducer(collectionType: CollectionType) {
         );
       case ActionType.SetLocationFilter:
         if (action.collectionType !== collectionType) return state;
+        if (collectionType === "sea-creatures") return state;
         return Object.assign(
           {},
           state,

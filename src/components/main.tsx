@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { BugsContainer, FishContainer } from '../containers/critters';
-import { BugsViewContainer, FishViewContainer } from '../containers/critterView';
+import { BugsContainer, FishContainer, SeaCreaturesContainer } from '../containers/critters';
+import { BugsViewContainer, FishViewContainer, SeaCreaturesViewContainer } from '../containers/critterView';
 import TodoContainer from '../containers/todo';
 import { ErrorComponent } from './error';
 
@@ -36,6 +36,20 @@ export function Main() {
           <section className="section-fish">
             <div className="container">
               <FishContainer />
+            </div>
+          </section>
+        </Route>
+        <Route exact path="/sea-creatures/:id">
+          <section className="section-sea-creatures">
+            <div className="container">
+              <SeaCreaturesViewContainer />
+            </div>
+          </section>
+        </Route>
+        <Route exact path="/sea-creatures">
+          <section className="section-sea-creatures">
+            <div className="container">
+              <SeaCreaturesContainer />
             </div>
           </section>
         </Route>

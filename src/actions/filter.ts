@@ -1,5 +1,5 @@
-import { TimeFilter, Action, ActionType, FishLocationFilter, DonateFilter, BugLocationFilter } from './types';
-import { CollectionType } from '../shared';
+import { TimeFilter, Action, ActionType, FishLocationFilter, DonateFilter, BugLocationFilter } from './actionTypes';
+import { CollectionType } from '../types';
 
 export function setTimeFilter(collectionType: CollectionType, filter: TimeFilter): Action {
   return {

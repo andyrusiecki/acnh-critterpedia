@@ -7,7 +7,8 @@ import middleware from './middleware';
 
 import './index.scss';
 import App from './components/app';
-import { getStateFromStorage, saveStateToStorage, InitialRootState } from './shared';
+import { getStateFromStorage, saveStateToStorage } from './util';
+import { InitialRootState } from './data';
 import { ActionType } from './actions';
 
 // Restore state from storage

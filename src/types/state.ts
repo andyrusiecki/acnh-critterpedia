@@ -1,9 +1,10 @@
-import { TimeFilter, FishLocationFilter, DonateFilter, BugLocationFilter } from '../../actions';
+import { TimeFilter, FishLocationFilter, DonateFilter, BugLocationFilter } from '../actions';
 
 export interface RootState {
   time: CurrentTimeState,
   fish: CollectionState,
   bugs: CollectionState,
+  seaCreatures: CollectionState,
 }
 
 export interface CurrentTimeState {
@@ -14,6 +15,6 @@ export interface CurrentTimeState {
 export interface CollectionState {
   donations: number[];
   timeFilter: TimeFilter,
-  locationFilter: BugLocationFilter | FishLocationFilter,
+  locationFilter?: BugLocationFilter | FishLocationFilter,
   donateFilter: DonateFilter,
 }

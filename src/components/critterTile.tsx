@@ -1,6 +1,6 @@
 import React from 'react';
-import { Critter } from '../shared/interfaces';
-import { getFullURL } from '../shared';
+import { Critter } from '../types';
+import { getFullURL } from '../util';
 
 import './critterTile.scss';
 

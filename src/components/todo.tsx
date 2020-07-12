@@ -1,5 +1,5 @@
 import React from 'react';
-import { CollectionType, Critter } from '../shared';
+import { CollectionType, Critter } from '../types';
 import{ CritterTile } from './critterTile';
 
 import './todo.scss';

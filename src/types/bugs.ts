@@ -1,9 +1,11 @@
-import { Critter } from "./critter";
+import { Critter, Rarity } from "./critter";
 
 export interface Bug extends Critter {
+  rarity: Rarity;
   location: BugLocation;
   canBeRaining: boolean;
   numBugsNeeded: number;
+  mustBeRaining: boolean;
 }
 
 export enum BugLocation {

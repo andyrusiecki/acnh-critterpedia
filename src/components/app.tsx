@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import { Header} from './header';
 import { Main } from './main';
-import { getBaseURL } from '../shared';
+import { getBaseURL } from '../util';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.scss';

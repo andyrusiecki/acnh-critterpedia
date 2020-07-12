@@ -1,6 +1,6 @@
 import React from 'react';
-import { Critter } from '../shared/interfaces';
-import { getFullURL } from '../shared';
+import { Critter } from '../types';
+import { getFullURL } from '../util';
 
 //import './critterView.scss';
 
@@ -18,7 +18,6 @@ export class CritterView extends React.Component<CritterViewProps> {
         <img src={getFullURL(`/images/full/${this.props.critter.type}/${this.props.critter.id}.png`)} alt={this.props.critter.name} />
 
         <div className={`donate-status ${this.props.donated ? 'donated' : ''}`} onClick={() => { this.props.setDonate(this.props.critter.id, !this.props.donated); }}></div>
-        <div className='critter-rarity'>{this.props.critter.rarity}</div>
         <div className='critter-sellprice'>{this.props.critter.sellPrice}</div>
 
         <div className='critter-availability'>

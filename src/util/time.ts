@@ -1,5 +1,5 @@
 import moment from "moment";
-import { Critter } from "../interfaces";
+import { Critter } from "../types";
 
 export function isAvailableAt(critter: Critter, hour?: number, month?: number): boolean {
   let isAvail = true;

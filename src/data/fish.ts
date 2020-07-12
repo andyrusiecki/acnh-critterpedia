@@ -1,4 +1,4 @@
-import { Fish, Rarity, FishLocation, FishShadow } from '../interfaces';
+import { Fish, Rarity, FishLocation, FishShadow } from '../types';
 
 export const FishLocationDisplay: Map<FishLocation, string> = new Map([
   [ FishLocation.CliffTop, 'Cliff Top' ],

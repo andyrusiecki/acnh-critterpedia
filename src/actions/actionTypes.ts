@@ -1,4 +1,4 @@
-import { CollectionType } from '../shared';
+import { CollectionType } from '../types';
 
 export enum ActionType {
   ToggleDonate,

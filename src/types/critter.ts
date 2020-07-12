@@ -1,14 +1,12 @@
-import { CollectionType } from "../types";
+import { CollectionType } from ".";
 
 export interface Critter {
   id: number;
   type: CollectionType;
   name: string;
-  rarity: Rarity;
   monthRanges: number[][];
   hourRanges: number[][];
   sellPrice: number;
-  mustBeRaining: boolean;
 }
 
 export enum Rarity {

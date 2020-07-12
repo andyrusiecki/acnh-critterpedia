@@ -1,8 +1,10 @@
-import { Critter } from "./critter";
+import { Critter, Rarity } from "./critter";
 
 export interface Fish extends Critter {
+  rarity: Rarity;
   location: FishLocation;
   shadow: FishShadow;
+  mustBeRaining: boolean;
 }
 
 export enum FishLocation {

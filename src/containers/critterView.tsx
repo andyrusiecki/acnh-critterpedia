@@ -1,7 +1,8 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import { setDonate } from '../actions';
-import { RootState, CollectionType, Critter, CollectionState, getCritterByID } from '../shared';
+import { RootState, CollectionType, Critter, CollectionState } from '../types';
+import { getCritterByID, getCollectionState } from "../util";
 import { useParams } from 'react-router-dom';
 import { CritterView } from '../components/critterView';
 
@@ -14,10 +15,6 @@ interface CritterViewContainerProps {
 
 interface CritterViewURLParams {
   id?: string;
-}
-
-function getCollectionState(collectionType: CollectionType, rootState: RootState): CollectionState {
-  return collectionType === "bugs" ? rootState.bugs : rootState.fish;
 }
 
 function getMapStateToPropsFunc(collectionType: CollectionType) {
@@ -64,5 +61,14 @@ const BugsViewContainerComponent = (props: CritterViewContainerProps) => {
   );
 }
 
+const SeaCreaturesViewContainerComponent = (props: CritterViewContainerProps) => {
+  return (
+    <div className="sea-creatures-view-container">
+      <CritterView critter={props.critter} donated={props.donated} setDonate={props.setDonate}/>
+    </div>
+  );
+}
+
 export const FishViewContainer = connect(getMapStateToPropsFunc('fish'), getMapDispatchToPropsFunc('fish'))(FishViewContainerComponent);
 export const BugsViewContainer = connect(getMapStateToPropsFunc('bugs'), getMapDispatchToPropsFunc('bugs'))(BugsViewContainerComponent);
+export const SeaCreaturesViewContainer = connect(getMapStateToPropsFunc('sea-creatures'), getMapDispatchToPropsFunc('sea-creatures'))(SeaCreaturesViewContainerComponent);

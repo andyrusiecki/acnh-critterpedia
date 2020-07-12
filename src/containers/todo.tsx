@@ -1,7 +1,9 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import { setDonate } from '../actions';
-import { AllFish, RootState, CollectionType, isAvailableAt, UniqueCritterHourRanges, hourToDisplayText, monthToDisplayText, Critter, AllBugs, Bug, Fish } from '../shared';
+import { RootState, CollectionType, Critter, Bug, Fish, SeaCreature } from '../types';
+import { AllBugs, AllFish, AllSeaCreatures, UniqueCritterHourRanges } from "../data";
+import { isAvailableAt, hourToDisplayText, monthToDisplayText } from "../util";
 import { Todo } from '../components/todo';
 
 interface TodoContainerProps {
@@ -99,21 +101,27 @@ function getLeavingCritterIDsForNextMonth(critters: Critter[], donatedIDs: numbe
 function mapStateToProps(state: RootState) {
   const bugBuckets = getTodoCrittersPerBuckets(AllBugs, state.bugs.donations, state.time.month);
   const fishBuckets = getTodoCrittersPerBuckets(AllFish, state.fish.donations, state.time.month);
+  const seaCreatureBuckets = getTodoCrittersPerBuckets(AllSeaCreatures, state.seaCreatures.donations, state.time.month);
 
   const currentRange = getCurrentHourRange(state.time.hour);
   const nextRange = getNextHourRange(state.time.hour);
 
   const currentFishIDs = fishBuckets.get(`${currentRange[0]},${currentRange[1]}`) || [];
   const currentBugIDs = bugBuckets.get(`${currentRange[0]},${currentRange[1]}`) || [];
+  const currentSeaCreatureIDs = seaCreatureBuckets.get(`${currentRange[0]},${currentRange[1]}`) || [];
 
   const nextRangeFishIDs = fishBuckets.get(`${nextRange[0]},${nextRange[1]}`) || [];
   const nextRangeBugIDs = bugBuckets.get(`${nextRange[0]},${nextRange[1]}`) || [];
+  const nextRangeSeaCreatureIDs = seaCreatureBuckets.get(`${nextRange[0]},${nextRange[1]}`) || [];
 
   const nextNewFishIDs = nextRangeFishIDs.filter((id: number) => !currentFishIDs.includes(id));
   const nextLeavingFishIDs = currentFishIDs.filter((id: number) => !nextRangeFishIDs.includes(id));
 
   const nextNewBugIDs = nextRangeBugIDs.filter((id: number) => !currentBugIDs.includes(id));
   const nextLeavingBugIDs = currentBugIDs.filter((id: number) => !nextRangeBugIDs.includes(id));
+
+  const nextNewSeaCreatureIDs = nextRangeSeaCreatureIDs.filter((id: number) => !currentSeaCreatureIDs.includes(id));
+  const nextLeavingSeaCreatureIDs = currentSeaCreatureIDs.filter((id: number) => !nextRangeSeaCreatureIDs.includes(id));
 
 
   const newFishIDsNextMonth = getNewCritterIDsForNextMonth(AllFish, state.fish.donations, state.time.month);
@@ -122,29 +130,37 @@ function mapStateToProps(state: RootState) {
   const newBugIDsNextMonth = getNewCritterIDsForNextMonth(AllBugs, state.bugs.donations, state.time.month);
   const leavingBugIDsNextMonth = getLeavingCritterIDsForNextMonth(AllBugs, state.bugs.donations, state.time.month);
 
+  const newSeaCreatureIDsNextMonth = getNewCritterIDsForNextMonth(AllSeaCreatures, state.seaCreatures.donations, state.time.month);
+  const leavingSeaCreatureIDsNextMonth = getLeavingCritterIDsForNextMonth(AllSeaCreatures, state.seaCreatures.donations, state.time.month);
+
   const currentCritters: Critter[] = [
     ...(AllFish.filter((fish: Fish) => currentFishIDs.includes(fish.id))),
     ...(AllBugs.filter((bug: Bug) => currentBugIDs.includes(bug.id))),
+    ...(AllSeaCreatures.filter((sc: SeaCreature) => currentSeaCreatureIDs.includes(sc.id))),
   ];
 
   const nextHourNewCritters: Critter[] = [
     ...(AllFish.filter((fish: Fish) => nextNewFishIDs.includes(fish.id))),
     ...(AllBugs.filter((bug: Bug) => nextNewBugIDs.includes(bug.id))),
+    ...(AllSeaCreatures.filter((sc: SeaCreature) => nextNewSeaCreatureIDs.includes(sc.id))),
   ];
 
   const nextHourLeavingCritters: Critter[] = [
     ...(AllFish.filter((fish: Fish) => nextLeavingFishIDs.includes(fish.id))),
     ...(AllBugs.filter((bug: Bug) => nextLeavingBugIDs.includes(bug.id))),
+    ...(AllSeaCreatures.filter((sc: SeaCreature) => nextLeavingSeaCreatureIDs.includes(sc.id))),
   ];
 
   const nextMonthNewCritters: Critter[] = [
     ...(AllFish.filter((fish: Fish) => newFishIDsNextMonth.includes(fish.id))),
     ...(AllBugs.filter((bug: Bug) => newBugIDsNextMonth.includes(bug.id))),
+    ...(AllSeaCreatures.filter((sc: SeaCreature) => newSeaCreatureIDsNextMonth.includes(sc.id))),
   ];
 
   const nextMonthLeavingCritters: Critter[] = [
     ...(AllFish.filter((fish: Fish) => leavingFishIDsNextMonth.includes(fish.id))),
     ...(AllBugs.filter((bug: Bug) => leavingBugIDsNextMonth.includes(bug.id))),
+    ...(AllSeaCreatures.filter((sc: SeaCreature) => leavingSeaCreatureIDsNextMonth.includes(sc.id))),
   ];
 
   return {

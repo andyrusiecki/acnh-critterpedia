@@ -1,5 +1,5 @@
 import React from 'react';
-import { Critter } from '../shared/interfaces';
+import { Critter } from '../types';
 import { CritterTile } from './critterTile';
 import { Pagination } from './pagination';
 

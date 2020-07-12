@@ -1,7 +1,3 @@
-export * from './bugs';
-export * from './fish';
-export * from './state';
-
 export const UniqueCritterHourRanges: number[][] = [
   [3, 4],
   [4, 7],

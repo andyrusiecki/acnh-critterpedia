@@ -6,4 +6,5 @@ export default combineReducers({
   time,
   fish: getCritterReducer("fish"),
   bugs: getCritterReducer("bugs"),
+  seaCreatures: getCritterReducer("sea-creatures"),
 })

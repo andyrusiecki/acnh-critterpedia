@@ -1,5 +1,5 @@
-import { AllFish, AllBugs } from "../constants";
-import { Fish, Bug, Critter } from "../interfaces";
+import { AllFish, AllBugs } from "../data";
+import { Fish, Bug, Critter } from "../types";
 import { CollectionType } from "../types";
 
 export function getCritterByID(collectionType: CollectionType, id: number): Critter | null {

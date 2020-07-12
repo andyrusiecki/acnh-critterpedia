@@ -1,7 +1,9 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import { setTimeFilter, setLocationFilter, setDonateFilter, TimeFilter, FishLocationFilter, DonateFilter, toggleDonate, setDonate, BugLocationFilter } from '../actions';
-import { Fish, FishLocation, BugLocation, AllFish, AllBugs, RootState, CollectionType, Critter, isAvailableAt, Bug, CollectionState } from '../shared';
+import { AllBugs, AllFish, AllSeaCreatures } from "../data";
+import { Fish, FishLocation, BugLocation, RootState, CollectionType, Critter, Bug, CollectionState } from '../types';
+import { isAvailableAt, getCollectionState } from "../util";
 import { Filter, FilterOption } from '../components/filter';
 import { CritterList } from '../components/critterList';
 
@@ -22,17 +24,16 @@ interface CritterContainerProps {
   setDonateFilter: (filter: DonateFilter) => void;
 }
 
-function getCollectionState(collectionType: CollectionType, rootState: RootState): CollectionState {
-  return collectionType === "bugs" ? rootState.bugs : rootState.fish;
-}
-
 function getSelectedCritterIDs(collectionType: CollectionType, critters: Critter[], state: RootState): number[] {
   const collectionState = getCollectionState(collectionType, state);
 
   let filteredCritters = critters;
   filteredCritters = filterCrittersByTime(filteredCritters, state.time.hour, state.time.month, collectionState.timeFilter);
-  filteredCritters = filterCrittersByLocation(filteredCritters, collectionType, collectionState.locationFilter);
   filteredCritters = filterCrittersByDonate(filteredCritters, collectionState.donations, collectionState.donateFilter);
+
+  if (collectionState.locationFilter !== undefined) {
+    filteredCritters = filterCrittersByLocation(filteredCritters, collectionType, collectionState.locationFilter);
+  }
 
   return filteredCritters.map(critter => critter.id);
 }
@@ -104,24 +105,28 @@ function filterCrittersByLocation(critters: Critter[], collectionType: Collectio
     }
   }
 
-  switch (filter) {
-    case FishLocationFilter.SHOW_ALL:
-      return critters;
-    case FishLocationFilter.SHOW_CLIFF_TOP:
-      return critters.filter((critter: Critter) => (critter as Fish).location === FishLocation.CliffTop);
-    case FishLocationFilter.SHOW_PIER:
-      return critters.filter((critter: Critter) => (critter as Fish).location === FishLocation.Pier);
-    case FishLocationFilter.SHOW_POND:
-      return critters.filter((critter: Critter) => (critter as Fish).location === FishLocation.Pond);
-    case FishLocationFilter.SHOW_RIVER:
-      return critters.filter((critter: Critter) => (critter as Fish).location === FishLocation.River);
-    case FishLocationFilter.SHOW_RIVER_MOUTH:
-      return critters.filter((critter: Critter) => (critter as Fish).location === FishLocation.RiverMouth);
-    case FishLocationFilter.SHOW_SEA:
-      return critters.filter((critter: Critter) => (critter as Fish).location === FishLocation.Sea);
-    default:
-      return critters;
+  if (collectionType === "fish") {
+    switch (filter) {
+      case FishLocationFilter.SHOW_ALL:
+        return critters;
+      case FishLocationFilter.SHOW_CLIFF_TOP:
+        return critters.filter((critter: Critter) => (critter as Fish).location === FishLocation.CliffTop);
+      case FishLocationFilter.SHOW_PIER:
+        return critters.filter((critter: Critter) => (critter as Fish).location === FishLocation.Pier);
+      case FishLocationFilter.SHOW_POND:
+        return critters.filter((critter: Critter) => (critter as Fish).location === FishLocation.Pond);
+      case FishLocationFilter.SHOW_RIVER:
+        return critters.filter((critter: Critter) => (critter as Fish).location === FishLocation.River);
+      case FishLocationFilter.SHOW_RIVER_MOUTH:
+        return critters.filter((critter: Critter) => (critter as Fish).location === FishLocation.RiverMouth);
+      case FishLocationFilter.SHOW_SEA:
+        return critters.filter((critter: Critter) => (critter as Fish).location === FishLocation.Sea);
+      default:
+        return critters;
+    }
   }
+
+  return critters;
 }
 
 function filterCrittersByDonate(critters: Critter[], donatedIDs: number[], filter: DonateFilter): Critter[] {
@@ -152,11 +157,13 @@ function getMapStateToPropsFunc(collectionType: CollectionType) {
       }
     }
 
-    const locationOptions: FilterOption[] = collectionType === 'bugs' ? bugLocationOptions : fishLocationOptions;
-    for (let option of locationOptions) {
-      if (option.value === collectionState.locationFilter) {
-        defaultLocationFilterOption = option;
-        break;
+    if (collectionType !== 'sea-creatures') {
+      const locationOptions: FilterOption[] = collectionType === 'bugs' ? bugLocationOptions : fishLocationOptions;
+      for (let option of locationOptions) {
+        if (option.value === collectionState.locationFilter) {
+          defaultLocationFilterOption = option;
+          break;
+        }
       }
     }
 
@@ -167,11 +174,20 @@ function getMapStateToPropsFunc(collectionType: CollectionType) {
       }
     }
 
+    let allCritters: Critter[];
+    if (collectionType === "bugs") {
+      allCritters = AllBugs;
+    } else if (collectionType === "fish") {
+      allCritters = AllFish;
+    } else {
+      allCritters = AllSeaCreatures;
+    }
+
     return {
       donatedIDs: collectionState.donations,
       selectedIDs: getSelectedCritterIDs(
         collectionType,
-        collectionType === "bugs" ? AllBugs : AllFish,
+        allCritters,
         state,
       ),
       filterDefaultOption: {
@@ -195,11 +211,11 @@ function getMapDispatchToPropsFunc(collectionType: CollectionType) {
       setTimeFilter: (filter: TimeFilter) => {
         dispatch(setTimeFilter(collectionType, filter));
       },
-      setLocationFilter: (filter: BugLocationFilter | FishLocationFilter) => {
-        dispatch(setLocationFilter(collectionType, filter));
-      },
       setDonateFilter: (filter: DonateFilter) => {
         dispatch(setDonateFilter(collectionType, filter));
+      },
+      setLocationFilter: (filter: BugLocationFilter | FishLocationFilter) => {
+        dispatch(setLocationFilter(collectionType, filter));
       },
     };
   }
@@ -220,7 +236,6 @@ const timeOptions: FilterOption[] = [
   },
 ];
 
-// TODO: Continue here
 const fishLocationOptions: FilterOption[] = [
   {
     displayName: 'All',
@@ -380,5 +395,18 @@ const BugsContainerComponent = (props: CritterContainerProps) => {
   );
 }
 
+const SeaCreaturesContainerComponent = (props: CritterContainerProps) => {
+  return (
+    <div className="sea-creatures-container">
+      <div className="filters">
+        <Filter name="time" displayName="Time" options={timeOptions} defaultOption={props.filterDefaultOption.time} onUpdate={props.setTimeFilter} />
+        <Filter name="donate" displayName="Donated" options={donateOptions} defaultOption={props.filterDefaultOption.donate} onUpdate={props.setDonateFilter} />
+      </div>
+      <CritterList critters={AllSeaCreatures} selectedIDs={props.selectedIDs} donatedIDs={props.donatedIDs} setDonate={props.setDonate}/>
+    </div>
+  );
+}
+
 export const FishContainer = connect(getMapStateToPropsFunc('fish'), getMapDispatchToPropsFunc('fish'))(FishContainerComponent);
 export const BugsContainer = connect(getMapStateToPropsFunc('bugs'), getMapDispatchToPropsFunc('bugs'))(BugsContainerComponent);
+export const SeaCreaturesContainer = connect(getMapStateToPropsFunc('sea-creatures'), getMapDispatchToPropsFunc('sea-creatures'))(SeaCreaturesContainerComponent);

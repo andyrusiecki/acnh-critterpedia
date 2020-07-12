@@ -1,4 +1,4 @@
-import { Bug, Rarity, BugLocation } from '../interfaces';
+import { Bug, Rarity, BugLocation } from '../types';
 
 export const BugLocationDisplay: Map<BugLocation, string> = new Map([
   [ BugLocation.Beach, 'Beach' ],
