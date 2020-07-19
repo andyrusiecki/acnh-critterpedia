@@ -45,7 +45,7 @@ export class CritterList<T extends Critter> extends React.Component<CritterListP
   }
 
   private shouldEnablePagination(): boolean {
-    return window.innerWidth >= this.MIN_WIDTH_PAGINATION;
+    return this.props.critters.length > this.MAX_PER_PAGE && window.innerWidth >= this.MIN_WIDTH_PAGINATION;
   }
 
   private checkForResize() {

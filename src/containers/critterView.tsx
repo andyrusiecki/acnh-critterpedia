@@ -1,7 +1,7 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import { setDonate } from '../actions';
-import { RootState, CollectionType, Critter, CollectionState } from '../types';
+import { RootState, CollectionType, Critter } from '../types';
 import { getCritterByID, getCollectionState } from "../util";
 import { useParams } from 'react-router-dom';
 import { CritterView } from '../components/critterView';

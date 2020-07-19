@@ -1,5 +1,5 @@
-import { AllFish, AllBugs } from "../data";
-import { Fish, Bug, Critter } from "../types";
+import { AllFish, AllBugs, AllSeaCreatures } from "../data";
+import { Fish, Bug, Critter, SeaCreature } from "../types";
 import { CollectionType } from "../types";
 
 export function getCritterByID(collectionType: CollectionType, id: number): Critter | null {
@@ -7,7 +7,11 @@ export function getCritterByID(collectionType: CollectionType, id: number): Crit
     return getBugByID(id);
   }
 
-  return getFishByID(id);
+  if (collectionType === 'fish') {
+    return getFishByID(id);
+  }
+
+  return getSeaCreatureByID(id);
 }
 
 export function getBugByID(id: number): Bug | null {
@@ -24,6 +28,16 @@ export function getFishByID(id: number): Fish | null {
   for (let i = 0; i < AllFish.length; i++) {
     if (AllFish[i].id === id) {
       return AllFish[i];
+    }
+  }
+
+  return null;
+}
+
+export function getSeaCreatureByID(id: number): SeaCreature | null {
+  for (let i = 0; i < AllSeaCreatures.length; i++) {
+    if (AllSeaCreatures[i].id === id) {
+      return AllSeaCreatures[i];
     }
   }
 

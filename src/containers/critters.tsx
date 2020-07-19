@@ -2,7 +2,7 @@ import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import { setTimeFilter, setLocationFilter, setDonateFilter, TimeFilter, FishLocationFilter, DonateFilter, toggleDonate, setDonate, BugLocationFilter } from '../actions';
 import { AllBugs, AllFish, AllSeaCreatures } from "../data";
-import { Fish, FishLocation, BugLocation, RootState, CollectionType, Critter, Bug, CollectionState } from '../types';
+import { Fish, FishLocation, BugLocation, RootState, CollectionType, Critter, Bug } from '../types';
 import { isAvailableAt, getCollectionState } from "../util";
 import { Filter, FilterOption } from '../components/filter';
 import { CritterList } from '../components/critterList';
