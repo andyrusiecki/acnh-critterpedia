@@ -48,7 +48,7 @@ export class Pagination extends React.Component<PaginationProps, PaginationState
             </div>
           );
         })}
-        <div className="pagination-controls">
+        <div className={"pagination-controls" + (this.props.pages.length < 2 ? " hide" : "")}>
           <div
             className={"prev-page" + (this.state.currentPage === 0 ? " hide" : "")}
             onClick={() => {
