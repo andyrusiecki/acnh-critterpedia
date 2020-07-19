@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/acnh-critterpedia/static/css/main.8db238da.chunk.css",
-    "main.js": "/acnh-critterpedia/static/js/main.85946304.chunk.js",
-    "main.js.map": "/acnh-critterpedia/static/js/main.85946304.chunk.js.map",
+    "main.css": "/acnh-critterpedia/static/css/main.91d4e676.chunk.css",
+    "main.js": "/acnh-critterpedia/static/js/main.e79eab1b.chunk.js",
+    "main.js.map": "/acnh-critterpedia/static/js/main.e79eab1b.chunk.js.map",
     "runtime-main.js": "/acnh-critterpedia/static/js/runtime-main.f27a5936.js",
     "runtime-main.js.map": "/acnh-critterpedia/static/js/runtime-main.f27a5936.js.map",
     "static/css/2.af3c1da9.chunk.css": "/acnh-critterpedia/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.245c68d2.chunk.js": "/acnh-critterpedia/static/js/2.245c68d2.chunk.js",
-    "static/js/2.245c68d2.chunk.js.map": "/acnh-critterpedia/static/js/2.245c68d2.chunk.js.map",
+    "static/js/2.bd515ce0.chunk.js": "/acnh-critterpedia/static/js/2.bd515ce0.chunk.js",
+    "static/js/2.bd515ce0.chunk.js.map": "/acnh-critterpedia/static/js/2.bd515ce0.chunk.js.map",
     "index.html": "/acnh-critterpedia/index.html",
-    "precache-manifest.bc26c0ea8af136836572c554577b7989.js": "/acnh-critterpedia/precache-manifest.bc26c0ea8af136836572c554577b7989.js",
+    "precache-manifest.22e9afe8b45f8d40c7911a89c1c15b63.js": "/acnh-critterpedia/precache-manifest.22e9afe8b45f8d40c7911a89c1c15b63.js",
     "service-worker.js": "/acnh-critterpedia/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/acnh-critterpedia/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.8db238da.chunk.css.map": "/acnh-critterpedia/static/css/main.8db238da.chunk.css.map",
-    "static/js/2.245c68d2.chunk.js.LICENSE.txt": "/acnh-critterpedia/static/js/2.245c68d2.chunk.js.LICENSE.txt"
+    "static/css/main.91d4e676.chunk.css.map": "/acnh-critterpedia/static/css/main.91d4e676.chunk.css.map",
+    "static/js/2.bd515ce0.chunk.js.LICENSE.txt": "/acnh-critterpedia/static/js/2.bd515ce0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f27a5936.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.245c68d2.chunk.js",
-    "static/css/main.8db238da.chunk.css",
-    "static/js/main.85946304.chunk.js"
+    "static/js/2.bd515ce0.chunk.js",
+    "static/css/main.91d4e676.chunk.css",
+    "static/js/main.e79eab1b.chunk.js"
   ]
 }
