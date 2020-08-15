@@ -338,7 +338,7 @@ export const AllSeaCreatures: SeaCreature[] = [
       [21, 23],
     ],
     "monthRanges": [
-      [5, 8],
+      [5, 6],
     ],
     "shadow": SeaCreatureShadow.Small,
     "speed": SeaCreatureSpeed.Normal,
