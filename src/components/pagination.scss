@@ -46,9 +46,21 @@
 
       display: inline-block;
       margin: 10px;
-      height: 25px;
-      width: 25px;
-      background-color: beige;
+
+      font-size: 1rem;
+      padding: 5px 15px;
+      font-weight: 700;
+      background-color: #FDD10A;
+      color: #834B16;
+      box-shadow: 0 3px 2px 0 rgba(0,0,0,0.3);
+      border-radius: 15px;
+
+      &.next-page, &.prev-page {
+        &:hover, &:active {
+          color: #834B16;
+          background-color: #FFE46A;
+        }
+      }
     }
   }
 }

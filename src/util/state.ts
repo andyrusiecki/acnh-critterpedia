@@ -2,6 +2,7 @@
 import { RootState, CollectionType, CollectionState } from '../types';
 import { isLocalStorageSupported, saveToLocalStorage, getFromLocalStorage } from './localStorage';
 import { isCookieSupported, saveToCookie, getFromCookie } from './cookies';
+import { InitialRootState } from '../data';
 
 export function saveStateToStorage(state: RootState) {
   if (isLocalStorageSupported()) {
@@ -34,4 +35,16 @@ export function getCollectionState(collectionType: CollectionType, rootState: Ro
   }
 
   return rootState.seaCreatures;
+}
+
+export function getInitialCritterState(collectionType: CollectionType): CollectionState {
+  if (collectionType === "bugs") {
+    return InitialRootState.bugs;
+  }
+
+  if (collectionType === "fish") {
+    return InitialRootState.fish;
+  }
+
+  return InitialRootState.seaCreatures;
 }

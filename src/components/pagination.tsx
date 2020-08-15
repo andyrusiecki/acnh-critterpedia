@@ -55,7 +55,7 @@ export class Pagination extends React.Component<PaginationProps, PaginationState
               this.setPage(this.state.currentPage - 1);
             }}
           >
-            &lt;
+            &larr;
           </div>
 
           <div
@@ -70,7 +70,7 @@ export class Pagination extends React.Component<PaginationProps, PaginationState
               this.setPage(this.state.currentPage + 1);
             }}
           >
-            &gt;
+            &rarr;
           </div>
         </div>
       </div>

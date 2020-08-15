@@ -1,18 +1,6 @@
 import { Action, ActionType } from "../actions";
 import { CollectionState, CollectionType } from "../types";
-import { InitialRootState } from "../data";
-
-function getInitialCritterState(collectionType: CollectionType): CollectionState {
-  if (collectionType === "bugs") {
-    return InitialRootState.bugs;
-  }
-
-  if (collectionType === "fish") {
-    return InitialRootState.fish;
-  }
-
-  return InitialRootState.seaCreatures;
-}
+import { getInitialCritterState } from "../util";
 
 export function getCritterReducer(collectionType: CollectionType) {
   return function(state: CollectionState = getInitialCritterState(collectionType), action: Action): CollectionState {

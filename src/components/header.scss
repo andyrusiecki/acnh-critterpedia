@@ -1,3 +1,55 @@
 header {
+  background: url('/acnh-critterpedia/images/pattern-dots.png') #F7AA18;
+  background-size: auto;
+  background-size: 48px 48px;
 
+  nav {
+    padding: 5px 0px;
+
+    & > * {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    img.logo {
+      height: 30px;
+      width: 30px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+
+      li {
+        display: inline-block;
+        margin: 5px 10px;
+
+        font-size: 1rem;
+        padding: 5px 20px;
+        font-weight: 700;
+        background-color: #FDD10A;
+        color: #834B16;
+        box-shadow: 0 3px 2px 0 rgba(0,0,0,0.3);
+        border-radius: 15px;
+
+        &:hover, &:active {
+          color: #834B16;
+          background-color: #FFE46A;
+        }
+
+        a {
+          color: inherit;
+
+          &:hover {
+            color: inherit;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
 }

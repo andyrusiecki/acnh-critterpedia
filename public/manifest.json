@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ACNH Critterpedia",
+  "name": "Critter tracking and checklist",
   "icons": [
     {
       "src": "favicon.ico",
