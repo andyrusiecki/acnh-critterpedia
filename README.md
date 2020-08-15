@@ -46,8 +46,10 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## TODO
 
 - mixins, variables for button styles
+- update UI for Todo list view
 - remove create-react-app
 - critter view page
+- error reporting
 - settings page
   - donated json import/export
   - donated clear all/set all

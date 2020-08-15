@@ -10,6 +10,13 @@ interface CritterViewProps {
   setDonate: (id: number, isDonated: boolean) => void;
 }
 
+/**
+ * Component for a larger, detailed view of a Critter
+ *
+ * @export
+ * @class CritterView
+ * @extends {React.Component<CritterViewProps>}
+ */
 export class CritterView extends React.Component<CritterViewProps> {
   render() {
     return (

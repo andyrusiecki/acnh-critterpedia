@@ -11,6 +11,13 @@ interface CritterTileProps {
   setDonate: (id: number, isDonated: boolean) => void;
 }
 
+/**
+ * Component to render an individual CritterTile
+ *
+ * @export
+ * @class CritterTile
+ * @extends {React.Component<CritterTileProps>}
+ */
 export class CritterTile extends React.Component<CritterTileProps> {
   render() {
     return (

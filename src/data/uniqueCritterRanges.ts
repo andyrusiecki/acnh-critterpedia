@@ -1,3 +1,7 @@
+/**
+ * Array of hour ranges where available critters change.
+ * Using these ranges prevent us from checking every single hour.
+ */
 export const UniqueCritterHourRanges: number[][] = [
   [3, 4],
   [4, 7],

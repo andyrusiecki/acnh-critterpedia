@@ -12,6 +12,13 @@ interface TodoProps {
   setDonate: (collectionType: CollectionType, id: number, isDonated: boolean) => void;
 }
 
+/**
+ * Component to render a specific ToDo section
+ *
+ * @export
+ * @class Todo
+ * @extends {React.Component<TodoProps>}
+ */
 export class Todo extends React.Component<TodoProps> {
   render() {
     return (

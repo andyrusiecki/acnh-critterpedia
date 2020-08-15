@@ -24,6 +24,14 @@ interface CritterContainerProps {
   setDonateFilter: (filter: DonateFilter) => void;
 }
 
+/**
+ * Returns an array of Critter IDs that pass the current filters set
+ *
+ * @param {CollectionType} collectionType
+ * @param {Critter[]} critters
+ * @param {RootState} state
+ * @returns {number[]}
+ */
 function getSelectedCritterIDs(collectionType: CollectionType, critters: Critter[], state: RootState): number[] {
   const collectionState = getCollectionState(collectionType, state);
 
@@ -38,6 +46,15 @@ function getSelectedCritterIDs(collectionType: CollectionType, critters: Critter
   return filteredCritters.map(critter => critter.id);
 }
 
+/**
+ * Returns an array of Critter based on the time filter
+ *
+ * @param {Critter[]} critters
+ * @param {number} currentHour
+ * @param {number} currentMonth
+ * @param {TimeFilter} filter
+ * @returns {Critter[]}
+ */
 function filterCrittersByTime(critters: Critter[], currentHour: number, currentMonth: number, filter: TimeFilter): Critter[] {
   switch (filter) {
     case TimeFilter.SHOW_ALL:
@@ -55,6 +72,14 @@ function filterCrittersByTime(critters: Critter[], currentHour: number, currentM
   }
 }
 
+/**
+ * Returns an array of Critters based on the location filter
+ *
+ * @param {Critter[]} critters
+ * @param {CollectionType} collectionType
+ * @param {(BugLocationFilter | FishLocationFilter)} filter
+ * @returns {Critter[]}
+ */
 function filterCrittersByLocation(critters: Critter[], collectionType: CollectionType, filter: BugLocationFilter | FishLocationFilter): Critter[] {
   if (collectionType === "bugs") {
     switch (filter) {
@@ -129,6 +154,14 @@ function filterCrittersByLocation(critters: Critter[], collectionType: Collectio
   return critters;
 }
 
+/**
+ * Returns an array of Critters based on the donate filter
+ *
+ * @param {Critter[]} critters
+ * @param {number[]} donatedIDs
+ * @param {DonateFilter} filter
+ * @returns {Critter[]}
+ */
 function filterCrittersByDonate(critters: Critter[], donatedIDs: number[], filter: DonateFilter): Critter[] {
   switch (filter) {
     case DonateFilter.SHOW_ALL:
@@ -142,6 +175,12 @@ function filterCrittersByDonate(critters: Critter[], donatedIDs: number[], filte
   }
 }
 
+/**
+ * Returns a function to map the current state to a partial props object
+ *
+ * @param {CollectionType} collectionType
+ * @returns
+ */
 function getMapStateToPropsFunc(collectionType: CollectionType) {
   return function(state: RootState) {
     const collectionState = getCollectionState(collectionType, state);
@@ -199,6 +238,12 @@ function getMapStateToPropsFunc(collectionType: CollectionType) {
   }
 }
 
+/**
+ * Returns a function to map a dispatch function to partial props
+ *
+ * @param {CollectionType} collectionType
+ * @returns
+ */
 function getMapDispatchToPropsFunc(collectionType: CollectionType) {
   return function(dispatch: Dispatch<any>) {
     return {
@@ -221,6 +266,7 @@ function getMapDispatchToPropsFunc(collectionType: CollectionType) {
   }
 }
 
+// Time filter display options
 const timeOptions: FilterOption[] = [
   {
     displayName: 'All',
@@ -236,6 +282,7 @@ const timeOptions: FilterOption[] = [
   },
 ];
 
+// Fish location display options
 const fishLocationOptions: FilterOption[] = [
   {
     displayName: 'All',
@@ -267,6 +314,7 @@ const fishLocationOptions: FilterOption[] = [
   },
 ];
 
+// Bug location display options
 const bugLocationOptions: FilterOption[] = [
   {
     displayName: 'All',
@@ -354,6 +402,7 @@ const bugLocationOptions: FilterOption[] = [
   },
 ];
 
+// donate display options
 const donateOptions: FilterOption[] = [
   {
     displayName: 'All',

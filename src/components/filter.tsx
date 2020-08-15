@@ -20,6 +20,13 @@ interface FilterProps {
   onUpdate?: (optionValue: any) => void;
 }
 
+/**
+ * Component for rendering a dropdown for data set filtering options
+ *
+ * @export
+ * @class Filter
+ * @extends {React.Component<FilterProps, FilterState>}
+ */
 export class Filter extends React.Component<FilterProps, FilterState> {
   constructor(props: FilterProps) {
     super(props);

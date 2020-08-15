@@ -27,6 +27,12 @@ interface TodoContainerProps {
   setDonate: (collectionType: CollectionType, id: number, isDonated: boolean) => void;
 }
 
+/**
+ * Returns the current unique hour range that an input hour falls into
+ *
+ * @param {number} hour
+ * @returns {number[]}
+ */
 function getCurrentHourRange(hour: number): number[] {
   for (let range of UniqueCritterHourRanges) {
     let [start, end] = range;
@@ -43,6 +49,12 @@ function getCurrentHourRange(hour: number): number[] {
   return UniqueCritterHourRanges[0];
 }
 
+/**
+ * Returns the next unique hour range that this hour falls into
+ *
+ * @param {number} hour
+ * @returns {number[]}
+ */
 function getNextHourRange(hour: number): number[] {
   for (let i = 0; i < UniqueCritterHourRanges.length; i++) {
     const range = UniqueCritterHourRanges[i];
@@ -60,6 +72,14 @@ function getNextHourRange(hour: number): number[] {
   return UniqueCritterHourRanges[0];
 }
 
+/**
+ * Returns a map of hour ranges to critters available in a given month that have not yet been donated
+ *
+ * @param {Critter[]} startingCritters
+ * @param {number[]} donatedIDs
+ * @param {number} month
+ * @returns {Map<string, number[]>}
+ */
 function getTodoCrittersPerBuckets(startingCritters: Critter[], donatedIDs: number[], month: number): Map<string, number[]> {
   let todoFish = startingCritters.filter((critter: Critter) => {
     return !donatedIDs.includes(critter.id);
@@ -78,6 +98,14 @@ function getTodoCrittersPerBuckets(startingCritters: Critter[], donatedIDs: numb
   return map;
 }
 
+/**
+ * Returns an array of critter IDs that are new for the next month and have not yet been donated
+ *
+ * @param {Critter[]} critters
+ * @param {number[]} donatedIDs
+ * @param {number} month
+ * @returns {number[]}
+ */
 function getNewCritterIDsForNextMonth(critters: Critter[], donatedIDs: number[], month: number): number[] {
   const nextMonth = month === 12 ? 1 : month + 1;
 
@@ -88,6 +116,14 @@ function getNewCritterIDsForNextMonth(critters: Critter[], donatedIDs: number[],
   }).map((critter: Critter) => critter.id);
 }
 
+/**
+ * Returns an array of critter IDs that are laeving next month and have not yet been donated
+ *
+ * @param {Critter[]} critters
+ * @param {number[]} donatedIDs
+ * @param {number} month
+ * @returns {number[]}
+ */
 function getLeavingCritterIDsForNextMonth(critters: Critter[], donatedIDs: number[], month: number): number[] {
   const nextMonth = month === 12 ? 1 : month + 1;
 

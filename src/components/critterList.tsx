@@ -17,6 +17,14 @@ interface CritterListState {
   currentPage: number;
 }
 
+/**
+ * Component that renders a list of CritterTile components in a grid
+ *
+ * @export
+ * @class CritterList
+ * @extends {React.Component<CritterListProps, CritterListState>}
+ * @template T
+ */
 export class CritterList<T extends Critter> extends React.Component<CritterListProps, CritterListState> {
   readonly MIN_WIDTH_PAGINATION: number = 992; // same as container media query
   readonly MAX_PER_PAGE: number = 40;

@@ -10,6 +10,13 @@ interface PaginationState {
   lastPage: number;
 }
 
+/**
+ * Component for handling pagination of any number of generic pages
+ *
+ * @export
+ * @class Pagination
+ * @extends {React.Component<PaginationProps, PaginationState>}
+ */
 export class Pagination extends React.Component<PaginationProps, PaginationState> {
   readonly MIN_WIDTH_PAGINATION: number = 992; // same as container media query
   readonly state: PaginationState = {
