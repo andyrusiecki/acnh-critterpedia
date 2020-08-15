@@ -1,4 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ACNH Critterpedia
+
+A quick React web app for tracking critter donations and availability in Animal Crossing: New Horizons. All the animals in the game have pre-determined availability, which makes filtering based on the current time easy.
+
+This web app allows a user to track which critters have been donated by marking each one as it's caught. Each section is able to be filtered by the current time and which critters have been donated already. The main page shows a combined list of which critters are yet to be caught for the current hour, as well as the changes to the current available critters for the next time window and the next month.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and built out quickly as a prototype using [Redux](https://redux.js.org/). It's missing many necessary features if I were to deploy it outside of Github pages.
+
+## Current Limitations
+
+Due to it's deployment using Github pages, user data cannot be stored outside of the user's immediate browser. All critter donation data is stored in local storage.
+
+## TODO
+
+- [ ] mixins, variables for button styles
+- [ ] remeove dependency on react bootstrap for dropdowns
+- [ ] update UI for Todo list view
+- [ ] remove create-react-app
+- [ ] critter view page
+- [ ] error reporting
+- [ ] google analytics support
+- [ ] settings page
+  - donated json import/export
+  - donated clear all/set all
+  - northern/southern hemisphere selection
+- [ ] southern hemisphere times
+
+
+_Note: The rest of this README is boilerplate from "Create React App"_
+
+---
 
 ## Available Scripts
 
@@ -42,16 +72,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-## TODO
-
-- mixins, variables for button styles
-- update UI for Todo list view
-- remove create-react-app
-- critter view page
-- error reporting
-- settings page
-  - donated json import/export
-  - donated clear all/set all
-  - northern/southern hemisphere selection
-- southern hemisphere times
