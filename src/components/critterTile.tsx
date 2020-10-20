@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Critter } from '../types';
 import { getFullURL } from '../util';
 
@@ -23,8 +24,14 @@ export class CritterTile extends React.Component<CritterTileProps> {
     return (
       <div className={`critter-item ${this.props.active ? '' : 'inactive'}`}>
         <div className={`donate-status ${this.props.donated ? 'donated' : ''}`} onClick={() => { this.props.setDonate(this.props.critter.id, !this.props.donated); }}></div>
-        <img src={getFullURL(`/images/thumb/${this.props.critter.type}/${this.props.critter.id}.png`)} alt={this.props.critter.name} />
+        <Link to={this.getViewPath()}>
+          <img src={getFullURL(`/images/thumb/${this.props.critter.type}/${this.props.critter.id}.png`)} alt={this.props.critter.name} />
+        </Link>
       </div>
     );
+  }
+
+  getViewPath(): string {
+    return `/${this.props.critter.type}/${this.props.critter.id}`
   }
 }

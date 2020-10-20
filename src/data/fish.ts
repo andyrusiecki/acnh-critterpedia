@@ -9,6 +9,16 @@ export const FishLocationDisplay: Map<FishLocation, string> = new Map([
   [ FishLocation.Sea, 'Sea' ],
 ]);
 
+export const FishShadowDisplay: Map<FishShadow, string> = new Map([
+  [ FishShadow.VerySmall, 'Very Small' ],
+  [ FishShadow.Small, 'Small' ],
+  [ FishShadow.Medium, 'Medium' ],
+  [ FishShadow.Large, 'Large' ],
+  [ FishShadow.Huge, 'Huge' ],
+  [ FishShadow.LongAndThin, 'Long and Thin' ],
+  [ FishShadow.Finned, 'Finned' ],
+]);
+
 export const AllFish: Fish[] = [
   {
     "hourRanges": [

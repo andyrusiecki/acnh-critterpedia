@@ -7,6 +7,13 @@ export const SeaCreatureSpeedDisplay: Map<SeaCreatureSpeed, string> = new Map([
   [ SeaCreatureSpeed.Fast, 'Fast' ],
 ]);
 
+export const SeaCreatureShadowDisplay: Map<SeaCreatureShadow, string> = new Map([
+  [ SeaCreatureShadow.VerySmall, 'Very Small' ],
+  [ SeaCreatureShadow.Small, 'Small' ],
+  [ SeaCreatureShadow.Medium, 'Medium' ],
+  [ SeaCreatureShadow.Large, 'Large' ],
+]);
+
 export const AllSeaCreatures: SeaCreature[] = [
   {
     "id": 1,

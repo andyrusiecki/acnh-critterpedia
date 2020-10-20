@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { Header} from './header';
+import { Footer } from './footer';
+import { Header } from './header';
 import { Main } from './main';
 import { getBaseURL } from '../util';
 
@@ -14,6 +15,7 @@ function App() {
     <Router basename={getBaseURL()}>
       <Header />
       <Main />
+      <Footer />
     </Router>
   );
 }

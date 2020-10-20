@@ -3,6 +3,10 @@ main, section {
   margin: 0px;
 }
 
+section {
+  height: 100%;
+}
+
 .section-todo {
   background-image: url("/acnh-critterpedia/images/pattern-leaves-white.jpg");
   background-repeat: repeat;
