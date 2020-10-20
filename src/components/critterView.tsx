@@ -1,4 +1,5 @@
 import React from 'react';
+import { HourTimeRange, MonthTimeRange } from './timeRange';
 import { BugLocationDisplay, FishLocationDisplay, FishShadowDisplay, SeaCreatureShadowDisplay, SeaCreatureSpeedDisplay } from '../data';
 import { Critter, Fish, Bug, RarityDisplay, SeaCreature } from '../types';
 import { getFullURL } from '../util';
@@ -27,8 +28,8 @@ export class CritterView extends React.Component<CritterViewProps> {
             <img className='full-size' src={getFullURL(`/images/full/${this.props.critter.type}/${this.props.critter.id}.png`)} alt={this.props.critter.name} />
             <div className={`donate-status ${this.props.donated ? 'donated' : ''}`} onClick={() => { this.props.setDonate(this.props.critter.id, !this.props.donated); }}></div>
             <div className='critter-availability'>
-              hours: {this.props.critter.hourRanges}
-              months: {this.props.critter.monthRanges}
+              {this.renderHourRange()}
+              {this.renderMonthRange()}
             </div>
           </div>
           <div className="right-col">
@@ -100,5 +101,46 @@ export class CritterView extends React.Component<CritterViewProps> {
         <td>{SeaCreatureSpeedDisplay.get(seaCreature.speed)}</td>
       </tr>,
     ];
+  }
+
+  renderHourRange() {
+    const { hourRanges } = this.props.critter;
+    const hourSet: Set<number> = new Set();
+
+    hourRanges.forEach((range: number[]) => {
+      for (let i = range[0]; i < range[1]; i++) {
+        hourSet.add(i);
+      }
+    });
+
+    const hours = Array.from(hourSet).sort();
+
+    // check for looping last range
+    const lastRange = hourRanges[hourRanges.length - 1];
+
+    if (lastRange[0] > lastRange[1]) {
+      hours.push(24);
+    }
+
+    return (
+      <HourTimeRange ranges={hours} />
+    );
+  }
+
+  renderMonthRange() {
+    const { monthRanges } = this.props.critter;
+    const monthSet: Set<number> = new Set();
+
+    monthRanges.forEach((range: number[]) => {
+      for (let i = range[0]; i <= range[1]; i++) {
+        monthSet.add(i);
+      }
+    });
+
+    const months = Array.from(monthSet).sort();
+
+    return (
+      <MonthTimeRange ranges={months} />
+    );
   }
 }
