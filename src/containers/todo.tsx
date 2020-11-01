@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { setDonate } from '../actions';
 import { RootState, CollectionType, Critter, Bug, Fish, SeaCreature } from '../types';
 import { AllBugs, AllFish, AllSeaCreatures, UniqueCritterHourRanges } from "../data";
-import { isAvailableAt, hourToDisplayText, monthToDisplayText } from "../util";
+import { isAvailableAt, hourToDisplayText, monthToDisplayText, setPageTitle } from "../util";
 import { Todo } from '../components/todo';
 
 interface TodoContainerProps {
@@ -228,6 +228,8 @@ function mapDispatchToProps(dispatch: Dispatch<any>) {
 }
 
 const TodoContainer = (props: TodoContainerProps) => {
+  setPageTitle('ToDo');
+
   return (
     <div className="todo-container">
       <Todo title="Available Now" critters={props.currentHourRange.critters} setDonate={props.setDonate} />

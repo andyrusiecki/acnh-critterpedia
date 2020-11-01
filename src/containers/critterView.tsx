@@ -2,7 +2,7 @@ import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import { setDonate } from '../actions';
 import { RootState, CollectionType, Critter } from '../types';
-import { getCritterByID, getCollectionState } from "../util";
+import { getCritterByID, getCollectionState, setPageTitle } from "../util";
 import { useParams } from 'react-router-dom';
 import { CritterView } from '../components/critterView';
 
@@ -46,6 +46,8 @@ function getMapDispatchToPropsFunc(collectionType: CollectionType) {
 }
 
 const FishViewContainerComponent = (props: CritterViewContainerProps) => {
+  setPageTitle(props.critter.name);
+
   return (
     <div className="fish-view-container">
       <CritterView critter={props.critter} donated={props.donated} setDonate={props.setDonate}/>
@@ -54,6 +56,8 @@ const FishViewContainerComponent = (props: CritterViewContainerProps) => {
 }
 
 const BugsViewContainerComponent = (props: CritterViewContainerProps) => {
+  setPageTitle(props.critter.name);
+
   return (
     <div className="bugs-view-container">
       <CritterView critter={props.critter} donated={props.donated} setDonate={props.setDonate}/>
@@ -62,6 +66,8 @@ const BugsViewContainerComponent = (props: CritterViewContainerProps) => {
 }
 
 const SeaCreaturesViewContainerComponent = (props: CritterViewContainerProps) => {
+  setPageTitle(props.critter.name);
+
   return (
     <div className="sea-creatures-view-container">
       <CritterView critter={props.critter} donated={props.donated} setDonate={props.setDonate}/>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { setTimeFilter, setLocationFilter, setDonateFilter, TimeFilter, FishLocationFilter, DonateFilter, toggleDonate, setDonate, BugLocationFilter } from '../actions';
 import { AllBugs, AllFish, AllSeaCreatures } from "../data";
 import { Fish, FishLocation, BugLocation, RootState, CollectionType, Critter, Bug } from '../types';
-import { isAvailableAt, getCollectionState } from "../util";
+import { isAvailableAt, getCollectionState, setPageTitle } from "../util";
 import { Filter, FilterOption } from '../components/filter';
 import { CritterList } from '../components/critterList';
 
@@ -419,6 +419,8 @@ const donateOptions: FilterOption[] = [
 ];
 
 const FishContainerComponent = (props: CritterContainerProps) => {
+  setPageTitle('Fish');
+
   return (
     <div className="fish-container">
       <div className="filters">
@@ -432,6 +434,8 @@ const FishContainerComponent = (props: CritterContainerProps) => {
 }
 
 const BugsContainerComponent = (props: CritterContainerProps) => {
+  setPageTitle('Bugs');
+
   return (
     <div className="bugs-container">
       <div className="filters">
@@ -445,6 +449,8 @@ const BugsContainerComponent = (props: CritterContainerProps) => {
 }
 
 const SeaCreaturesContainerComponent = (props: CritterContainerProps) => {
+  setPageTitle('Sea Creatures');
+
   return (
     <div className="sea-creatures-container">
       <div className="filters">
